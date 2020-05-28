@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/gifts/v1")
+@RequestMapping("/book_store/v1")
 
 public class GiftsController {
 
@@ -44,7 +44,7 @@ public class GiftsController {
     }
 
 
-//  save request
+//  save gifts
 
     @PostMapping("/gifts")
     public Gifts createGifts(@Valid @RequestBody Gifts gifts) {
