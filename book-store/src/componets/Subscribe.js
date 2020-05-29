@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter} from "react-router-dom";
-import { Button, Container, Form, FormGroup, Input, Label }  from 'reactstrap';
+import { Button, Container, Form, FormGroup, Input }  from 'reactstrap';
 import "../styles/Subscribe.scss"
 
 class Subscribe extends React.Component{
@@ -45,7 +45,7 @@ render(){
     const {item}=this.state
     return(
         <Container id="main-div-subscribe-page">
-        <h1 id="subscribe-page-h1">Welcome to "My Recipe Book"</h1>
+        <h1 id="subscribe-page-h1">Welcome to "Matreshka, Inc."</h1>
             <Container id="subscribe-page-form-div">
             <p id="p-subscribe">Please subscribe to receive a new recipes every day</p>
                 <Form onSubmit={this.submitButtonHandler}>

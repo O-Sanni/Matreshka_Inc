@@ -1,8 +1,6 @@
 import React from "react";
 import TranslationSearch from "./TranslationSearch";
 
-
-
 const initialState=""; //constant value to use within the code
 
 class TranslationComponent extends React.Component{
