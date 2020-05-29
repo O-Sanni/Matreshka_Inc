@@ -5,33 +5,33 @@ import "../styles/Subscribe.scss"
 
 class Subscribe extends React.Component{
 
-    subscribeEmpty={
-        email:"",
-        preferences:""
-    };
+  
 constructor(props){
     super(props);
     this.state={
-        item: this.subscribeEmpty
+        email:"",
+        age:""
     }
     
-    this.handleChange=this.handleChange.bind(this);
+    this.handleEmail=this.handleEmail.bind(this);
+    this.handleAge=this.handleAge.bind(this);
     this.submitButtonHandler=this.submitButtonHandler.bind(this);
     }
 
-handleChange(event){
-const target = event.target;
-const value=target.value;
-const name=target.name;
-let item={...this.state.item};
-item[name]=value;
-this.setState({item});
+handleEmail(event){
+    event.preventDefault();
+    this.setState({email: event.target.value})
+}
+handleAge(event){
+    event.preventDefault();
+    this.setState({age: event.target.value})
+    
 }
 
 async submitButtonHandler(event){
     event.preventDefault();
     const {item}=this.state;
-    await fetch(`/my_recipes_book/v1/subscriptions`,{
+    await fetch(`/book_store/v1/subscribe`,{
         method:'POST',
         headers:{
             'Accept': 'application/json',
@@ -47,16 +47,16 @@ render(){
         <Container id="main-div-subscribe-page">
         <h1 id="subscribe-page-h1">Welcome to "Matreshka, Inc."</h1>
             <Container id="subscribe-page-form-div">
-            <p id="p-subscribe">Please subscribe to receive a new recipes every day</p>
+            <p id="p-subscribe">Please subscribe to receive our updates every day</p>
                 <Form onSubmit={this.submitButtonHandler}>
                     <FormGroup id="form-subscribe-inputs-div">
                         <FormGroup className="form-subscribe-mini-divs">
                             <p className="subscribe-display-p">Enter Your Email</p>
-                            <Input   type="text" name="email" id="input-subscribe-email" value={item.email || ""} onChange={this.handleChange} autoComplete="email"/>
+                            <Input   type="text" name="email" id="input-subscribe-email" value={this.state.email} onChange={this.handleEmail} placeholder="Enter your email"/>
                         </FormGroup>
                         <FormGroup className="form-subscribe-mini-divs">
-                            <p className="subscribe-display-p">Indicate your food Preferences</p>
-                            <Input   type="text" name="preferences" id="input-subscribe-preferences" value={item.preferences || ""} onChange={this.handleChange} autoComplete="preferences"/>
+                            <p className="subscribe-display-p">Indicate your age</p>
+                            <Input   type="text" name="preferences" id="input-subscribe-preferences" value={this.state.age} onChange={this.handleAge} placeholder="Enter your age"/>
                         </FormGroup>
                     </FormGroup>
                     <FormGroup id="form-subscribe-buttons-divs">
