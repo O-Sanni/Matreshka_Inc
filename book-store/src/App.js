@@ -1,13 +1,15 @@
 import React from 'react';
-import BookLists from "./componets/BookSearch"
+import BookSearch from "./componets/BookSearch"
+import BookPage from "./componets/BookPage"
 import TranslationComponent from "./componets/TranslationComponent.js";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-{/* <BookLists /> */}
-<TranslationComponent />
+{/* <BookSearch /> */}
+{/* <TranslationComponent /> */}
+<BookPage />
     </div>
   );
 }

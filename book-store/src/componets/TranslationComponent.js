@@ -1,6 +1,6 @@
 import React from "react";
 import TranslationSearch from "./TranslationSearch";
-import { Button, Input, Link, FormGroup, Label, ButtonGroup} from 'reactstrap';
+import { Button, Input, FormGroup, Label, ButtonGroup, InputGroup, Container} from 'reactstrap';
 
 const initialState=""; //constant value to use within the code
 
@@ -37,9 +37,11 @@ class TranslationComponent extends React.Component{
 
    render(){
         return (
-                <div id="main-div-transl-page">
+                <Container id="main-div-transl-page">
                   <FormGroup id="translate-box">
+                      <InputGroup>
                       <Input id="textarea-transl" type="textarea" name="text" value={this.state.textTranslate} onChange={this.handleTextTranslate} placeholder="please enter text"/>
+                      </InputGroup>
                       <Label for="options-language" id="select-lable"> 
                        Please choose language:
                         <Input type="select"  id="select-transl" value={this.state.value} onChange={this.handleLanguage}>
@@ -77,17 +79,17 @@ class TranslationComponent extends React.Component{
                         </Input>
                       </Label>
                       <ButtonGroup id="buttons-translate">
-                        <Button id="input-submit-transl" type="button" onClick={this.submitButton}>Submit</Button>
+                        <Button  id="input-submit-transl" type="button" onClick={this.submitButton}>Submit</Button>
                         <Button id="clear-button-transl" type="button" onClick={()=>{this.setState({textTranslate: initialState, textInput: false})}}>Clear</Button>
                       </ButtonGroup>
-                  <div id="translation-output-div">
+                  <Container id="translation-output-div">
                     {/* use ternary operator, if the textInput is true , if the user entered text and press submitt call <Translation /> 
                     and send  language and text to Translations*/}
                     {this.state.textInput ? (<TranslationSearch text={this.state.textTranslate} language={this.state.langToTranslate} />) : ""}
-                  </div>
-                  <div id="div-pow-by"><a id="powered-by-a" href="http://translate.yandex.com">Powered by Yandex.Translate</a></div>
+                  </Container>
+                  <Container id="div-pow-by"><a id="powered-by-a" href="http://translate.yandex.com">Powered by Yandex.Translate</a></Container>
                   </FormGroup>
-                </div>)
+                </Container>)
    }  
 }
 
