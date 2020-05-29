@@ -18,7 +18,7 @@ this.getBooks();
 async getBooks(){
     const key=process.env.REACT_APP_API_KEY_BOOKS_NYT;
     try{
-        let booksData= await axios.get(`https://api.nytimes.com/svc/books/v3/lists/current/paperback-nonfiction.json?api-key=${key}`)
+        let booksData= await axios.get(`https://api.nytimes.com/svc/books/v3/lists/current/${this.props.typeSearch}.json?api-key=${key}`)
         this.setState({bookList:booksData.data})
         console.log(this.state.bookList);
     }

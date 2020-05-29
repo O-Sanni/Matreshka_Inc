@@ -3,45 +3,48 @@ import BookSearch from "./BookSearch"
 import { Button, Input, FormGroup, Label, ButtonGroup, InputGroup, Container} from 'reactstrap';
 
 
-function BookPage(){
-// class BookPage extends React.Component{
-// constructor(props){
-//     super(props);
-//     this.state={
-//         type_of_book: "",
-//         search: false
-//     }
-//     this.getType=this.getType.bind(this);
-//     this.submitButton=this.submitButton.bind(this);
-// }
+class BookPage extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+           submitButton: false,
+            typeSearch: "hardcover-fiction" 
+        }
+        this.handleChoice= this.handleChoice.bind(this);
+        this.submitButton=this.submitButton.bind(this);
+    }  
+  
+  
+    handleChoice(event){
+        event.preventDefault(); //prevent default behavior after you choose language
+        this.setState({typeSearch: event.target.value})
+    }
+  
+    //will setState textInput to true in order to make a translation
+    submitButton(event){
+      event.preventDefault();
+      this.setState({submitButton: true});
+    }
+  
+     render(){
+          return (
+                  <Container id="main-div-transl-page">
+                    <FormGroup id="translate-box">
+                        <Label for="options-language" id="select-lable"> 
+                         Please choose type of book:
+                          <Input type="select"  id="select-transl" value={this.state.value} onChange={this.handleChoice}>
+                            <option className="options-search-class" value="hardcover-fiction">Hardcover Fiction</option>
+                            <option className="options-searchclass" value="paperback-nonfiction">Paperback Nonfiction</option>
+                            <option className="options-search-class" value="e-book-fiction">E-book Fiction</option>
+                            <option className="options-search-class" value="e-book-nonfiction">E-book Nonfiction</option>
+                          </Input>
+                        </Label>
+                        </FormGroup>
+                          <Button  id="input-submit-transl" type="button" onClick={this.submitButton}>Submit</Button>
+                      {this.state.submitButton ? (<BookSearch typeSearch={this.state.typeSearch} />) : ""}
+                    </Container>
 
-let choice="";
-let submitButton=false;
-// render(){
-    return(
-    <Container>
-    <Label for="options-books" id="select-lable"> 
-    Please choose language:
-     <Input type="select"  id="select-transl" value={this.state.value} onChange={this.handleLanguage}>
-       <option className="options-lang-class" value="en">English</option>
-       <option className="options-lang-class" value="ar">Arabic</option>
-       <option className="options-lang-class" value="be">Belarusian</option>
-       <option className="options-lang-class" value="bn">Bengali</option>
-       <option className="options-lang-class" value="zh">Chinese</option> 
-       <option className="options-lang-class" value="nl">Dutch</option>
-
-
-     </Input>
-   </Label>
-   <Button  id="input-submit-transl" type="button" onClick={this.submitButton}>Submit</Button>
-                       
-   <Container id="translation-output-div">
-                    {/* use ternary operator, if the textInput is true , if the user entered text and press submitt call <Translation /> 
-                    and send  language and text to Translations*/}
-                    {this.state.submitButton ? (<BookSearch  choice={choice} />) : ""}
-                  </Container>
-   </Container>
-    )
+          )}
 }
 
 export default BookPage;
