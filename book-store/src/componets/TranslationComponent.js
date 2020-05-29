@@ -1,5 +1,6 @@
 import React from "react";
 import TranslationSearch from "./TranslationSearch";
+import { Button, Input, Link, FormGroup, Label, ButtonGroup} from 'reactstrap';
 
 const initialState=""; //constant value to use within the code
 
@@ -37,13 +38,11 @@ class TranslationComponent extends React.Component{
    render(){
         return (
                 <div id="main-div-transl-page">
-                  <div id="translate-box">
-                    <form id="form-transl-page" onSubmit={this.submitButton}>
-                      <textarea id="textarea-transl" type="text" value={this.state.textTranslate} onChange={this.handleTextTranslate} placeholder="please enter text"/>
-                      <label id="select-lable"> 
-                        {/* <label> will hold the list of the availiable languages for translation */}
-                        Please choose language:
-                        <select id="select-transl" value={this.state.value} onChange={this.handleLanguage}>
+                  <FormGroup id="translate-box">
+                      <Input id="textarea-transl" type="textarea" name="text" value={this.state.textTranslate} onChange={this.handleTextTranslate} placeholder="please enter text"/>
+                      <Label for="options-language" id="select-lable"> 
+                       Please choose language:
+                        <Input type="select"  id="select-transl" value={this.state.value} onChange={this.handleLanguage}>
                           <option className="options-lang-class" value="en">English</option>
                           <option className="options-lang-class" value="ar">Arabic</option>
                           <option className="options-lang-class" value="be">Belarusian</option>
@@ -75,21 +74,19 @@ class TranslationComponent extends React.Component{
                           <option className="options-lang-class" value="uz">Uzbek</option>
                           <option className="options-lang-class" value="uk">Ukrainian</option>
                           <option className="options-lang-class" value="vi">Vietnamese</option>
-                        </select>
-                      </label>
-                      <div id="buttons-translate">
-                        <input id="input-submit-transl" type="submit" value="Submit" />
-                        {/* clear button will setState to initial values */}
-                        <button id="clear-button-transl" type="button" onClick={()=>{this.setState({textTranslate: initialState, textInput: false})}}>Clear</button>
-                      </div>
-                    </form>
+                        </Input>
+                      </Label>
+                      <ButtonGroup id="buttons-translate">
+                        <Button id="input-submit-transl" type="button" onClick={this.submitButton}>Submit</Button>
+                        <Button id="clear-button-transl" type="button" onClick={()=>{this.setState({textTranslate: initialState, textInput: false})}}>Clear</Button>
+                      </ButtonGroup>
                   <div id="translation-output-div">
                     {/* use ternary operator, if the textInput is true , if the user entered text and press submitt call <Translation /> 
                     and send  language and text to Translations*/}
                     {this.state.textInput ? (<TranslationSearch text={this.state.textTranslate} language={this.state.langToTranslate} />) : ""}
                   </div>
                   <div id="div-pow-by"><a id="powered-by-a" href="http://translate.yandex.com">Powered by Yandex.Translate</a></div>
-                  </div>
+                  </FormGroup>
                 </div>)
    }  
 }

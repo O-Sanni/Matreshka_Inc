@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 
  let translation="";
+
 function TranslationSearch(props){
         const key=process.env.REACT_APP_TRANSLATION_API_KEY;
        
@@ -12,7 +13,7 @@ function TranslationSearch(props){
            .catch(error=>{
             console.log(error);
         })
-        console.log(translation);
+
         return <div>{translation}</div>
     }
 
