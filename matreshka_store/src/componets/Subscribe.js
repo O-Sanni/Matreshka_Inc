@@ -1,7 +1,7 @@
 import React from "react";
-import { Link, withRouter} from "react-router-dom";
+import { Link} from "react-router-dom";
+import axios from "axios";
 import { Button, Container, Form, FormGroup, Input }  from 'reactstrap';
-import "../styles/Subscribe.scss"
 
 class Subscribe extends React.Component{
 
@@ -30,15 +30,16 @@ handleAge(event){
 
 async submitButtonHandler(event){
     event.preventDefault();
-    const {item}=this.state;
-    await fetch(`/book_store/v1/subscribe`,{
-        method:'POST',
-        headers:{
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(item),
-        });
+    axios.post('/book_store/v1/subscribe', {
+        email: this.state.email,
+        age: this.state.age
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
     
     }
 render(){
@@ -47,7 +48,7 @@ render(){
         <Container id="main-div-subscribe-page">
         <h1 id="subscribe-page-h1">Welcome to "Matreshka, Inc."</h1>
             <Container id="subscribe-page-form-div">
-            <p id="p-subscribe">Please subscribe to receive our updates every day</p>
+            <p id="p-subscribe">Please subscribe to receive our daily updates</p>
                 <Form onSubmit={this.submitButtonHandler}>
                     <FormGroup id="form-subscribe-inputs-div">
                         <FormGroup className="form-subscribe-mini-divs">
@@ -70,4 +71,4 @@ render(){
     }
 }
 
-export default withRouter(Subscribe);
+export default Subscribe;
