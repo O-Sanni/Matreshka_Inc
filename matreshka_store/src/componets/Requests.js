@@ -13,7 +13,7 @@ class Requests extends React.Component{
         requesterPhoneNumber: "",
         itemName:"",
         requestDate:"",
-        englishItemName:"",
+        englishItemName:""
     }
     this.handleRequesterName=this.handleRequesterName.bind(this);
     this.handleRequesterEmail=this.handleRequesterEmail.bind(this);
@@ -21,7 +21,9 @@ class Requests extends React.Component{
     this.handleItemName=this.handleItemName.bind(this);
     this.handleRequestDate=this.handleRequestDate.bind(this);
     this.handleEnglishItemName=this.handleEnglishItemName.bind(this);
-    }
+    this.submitButtonHandler=this.submitButtonHandler.bind(this);
+   
+}
 
 handleRequesterName(event){
     event.preventDefault();
@@ -56,23 +58,22 @@ handleRequestDate(event){
 
 submitButtonHandler(event){
     event.preventDefault();
-    console.log(this.state.requesterEmail)
-    // axios.post('/book_store/v1/requests', {
-    //     requesterName: this.state.requesterName,
-    //     requesterEmail:this.state.requesterEmail,
-    //     requesterPhoneNumber:this.state.requesterPhoneNumber,
-    //     itemName: this.state.itemName,
-    //     englishItemName:this.state.englishItemName, 
-    //     requestDate: this.state.requestDate,
-    //     dateCompleted:"not complete yet"
-    //   })
-    //   .then(function (response) {
-    //     console.log(response);
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
-    // this.setState({ requesterName:"", requesterEmail:"", requesterPhoneNumber:"", itemName: "", englishItemName:"", itemDescription:"" })
+    axios.post('/book_store/v1/requests', {
+        requesterName: this.state.requesterName,
+        requesterEmail:this.state.requesterEmail,
+        requesterPhoneNumber:this.state.requesterPhoneNumber,
+        itemName: this.state.itemName,
+        englishItemName:this.state.englishItemName, 
+        requestDate: this.state.requestDate,
+        dateCompleted:"not complete yet"
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    this.setState({ requesterName:"", requesterEmail:"", requesterPhoneNumber:"", itemName: "", englishItemName:"",requestDate:"" })
     }
 
 render(){
