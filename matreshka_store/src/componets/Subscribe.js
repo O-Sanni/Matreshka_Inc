@@ -59,11 +59,11 @@ render(){
                 <Form onSubmit={this.submitButtonHandler}>
                     <FormGroup id="form-subscribe-inputs-div">
                         <FormGroup className="form-subscribe-mini-divs">
-                            <p className="subscribe-display-p">Enter Your Email</p>
+                            <p className="subscribe-display-p">Enter your email</p>
                             <Input   type="text" name="email" id="input-subscribe-email" value={this.state.email} onChange={this.handleEmail} placeholder="Enter your email"/>
                         </FormGroup>
                         <FormGroup className="form-subscribe-mini-divs">
-                            <p className="subscribe-display-p">Enter Your full name</p>
+                            <p className="subscribe-display-p">Enter your full name</p>
                             <Input   type="text" name="fullName" id="input-subscribe-email" value={this.state.fullName} onChange={this.handleFullName} placeholder="Enter your full name"/>
                         </FormGroup>
                         <FormGroup className="form-subscribe-mini-divs">

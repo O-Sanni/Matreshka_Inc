@@ -3,7 +3,7 @@ import {Route, Switch, Link , BrowserRouter as Router} from "react-router-dom";
 import { Nav, NavItem}  from 'reactstrap';
 import Subscribe from "./Subscribe";
 import BookPage from "./BookPage";
-import Orders from "./Orders";
+import Requests from "./Requests";
 import RussianBooksAndGifts from "./RussianBooksAndGifts";
 import AdminsPage from "./AdminsPage";
 
@@ -27,7 +27,7 @@ function Navigation(){
                 <Route exact path="/bestsellers" component={BookPage}></Route>
                 <Route exact path="/subscribe" component={Subscribe} ></Route>
                 <Route exact path="/from_russia" component={RussianBooksAndGifts}></Route>
-                <Route exact path="/orders" component={Orders} ></Route>
+                <Route exact path="/orders" component={Requests} ></Route>
                 {/* <Route exact path="/admin" component={AdminsPage} ></Route> */}
             </Switch>
         </Router>
