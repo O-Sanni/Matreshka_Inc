@@ -47,7 +47,7 @@ checkIfExist(){
                      <p className=""><span class="">Author: </span>{res.author}</p>
                     <p className=""><span class="">Publisher: </span>{res.publisher}</p>
                      <p className=""><span class="">Description: </span>{res.description}</p>
-                    <img className="" src={res.book_image} alt="dish image" />
+                    <img className="" src={res.book_image} alt="book image" />
                     <div>{buyLinks}</div>
                     </div>
 

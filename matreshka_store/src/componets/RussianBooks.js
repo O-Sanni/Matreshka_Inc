@@ -1,12 +1,14 @@
 import React from "react";
 import axios from "axios";
-import { Button, Input, FormGroup, Label, Container} from 'reactstrap';
+import { Container} from 'reactstrap';
+
+
 
 class RussianBooks extends React.Component{
     constructor(props){
         super(props);
             this.state={
-                russianBookList:[],
+                russianBookList:[]
             }
         }
         componentDidMount(){
@@ -14,40 +16,33 @@ class RussianBooks extends React.Component{
         }
         
         async getBooks(){
-            const key=process.env.REACT_APP_API_KEY_BOOKS_NYT;
-        
-            
+ 
             try{
-                let booksData= await axios.get(`https://api.nytimes.com/svc/books/v3/lists/current/${this.props.typeSearch}.json?api-key=${key}`)
-                this.setState({bookList:booksData.data.results.books})
+                let books= await axios.get(`/book_store/v1/books`)
+                this.setState({russianBookList:books.data})
             }
             catch(error){
                 console.log(error)
             }
         }
-        
         checkIfExist(){ 
-            let colors= ["secondary","success","primary","info", "light"];
-            if(this.state.bookList===undefined){}
+            if(this.state.russianBookList===undefined){}
             else{
-                console.log(this.state.bookList)
-                let books=this.state.bookList.map(res=> {
-                    let buyLinks=res.buy_links.map(res=>{return <div><Badge href={res.url} color={Math.random()}>Buy from {res.name}<br/></Badge></div>
-                     })
+                let books=this.state.russianBookList.map(res=> {
                     return (
                         <div className="">
-                             <h2 className="">Title: {res.title} <Badge color="success">Rank #{res.rank}</Badge> </h2> 
-                             <p className=""><span class="">Author: </span>{res.author}</p>
-                            <p className=""><span class="">Publisher: </span>{res.publisher}</p>
-                             <p className=""><span class="">Description: </span>{res.description}</p>
-                            <img className="" src={res.book_image} alt="dish image" />
-                            <div>{buyLinks}</div>
+                             <h2 className="">Title: {res.bookName} ({res.bookEnglishName}) </h2> 
+                             <p className=""><span class="">Author: </span>{res.bookAuthor}</p>
+                             <p className=""><span class="">Description: </span>{res.bookDescription}</p>
+                             <p className=""><span class="">Category: </span>{res.bookCategory}</p>
+                             <p className=""><span class="">Price: </span>${res.bookPrice}</p>
+                             <p className=""><span class="">Buy at: </span><a href={res.bookWebsite}>Direct webste</a></p>
+                            <img className="" src={res.bookPicture} alt="book image" />
                             </div>
-        
                 )})
-                console.log(books)
                 return books;
             }
+           
         }
         
         render(){
