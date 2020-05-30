@@ -21,7 +21,6 @@ public class Gifts {
     @Column(name = "gift_name")
     private String giftName;
 
-
     @Column(name = "gift_description")
     private String giftDescription;
 
@@ -60,7 +59,7 @@ public class Gifts {
         return giftName;
     }
 
-    public void setGiftName(String userName) {
+    public void setGiftName(String giftName) {
         this.giftName = giftName;
     }
 
