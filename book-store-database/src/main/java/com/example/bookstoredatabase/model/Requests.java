@@ -17,9 +17,11 @@ public class Requests {
     @Column(name = "requester_name")
     private String requesterName;
 
-
     @Column(name = "requester_email")
     private String requesterEmail;
+
+    @Column(name = "requester_phone_number")
+    private String requesterPhoneNumber;
 
     @Column(name = "item_name")
     private String itemName;
@@ -40,11 +42,12 @@ public class Requests {
         super();
     }
 
-    public Requests(String requesterName, String requesterEmail, String itemName, String englishItemName, String itemDescription,Date requestDate, Date dateCompleted) {
+    public Requests(String requesterName, String requesterEmail, String requesterPhoneNumber, String itemName, String englishItemName, String itemDescription,Date requestDate, Date dateCompleted) {
         super();
 
         this.requesterName = requesterName;
         this.requesterEmail = requesterEmail;
+        this.requesterPhoneNumber=requesterPhoneNumber;
         this.itemName = itemName;
         this.englishItemName=englishItemName;
         this.itemDescription = itemDescription;
@@ -76,6 +79,13 @@ public class Requests {
         this.requesterEmail = requestorEmail;
     }
 
+    public String getRequesterPhoneNumber(){
+        return requesterPhoneNumber;
+    }
+
+    public void setRequesterPhoneNumber(String requesterPhoneNumber){
+        this.requesterPhoneNumber=requesterPhoneNumber;
+    }
     public String getItemName() {
         return itemName;
     }

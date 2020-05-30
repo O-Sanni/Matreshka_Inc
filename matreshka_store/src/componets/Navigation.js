@@ -20,7 +20,7 @@ function Navigation(){
                 </NavItem>
                 <NavItem><Link className="class-link" to="/subscribe">Subscribe</Link></NavItem>
                 <NavItem><Link className="class-link" to="/from_russia">Gifts and Books from Russia</Link></NavItem>
-                <NavItem><Link className="class-link" to="/orders">Make order</Link></NavItem>
+                <NavItem><Link className="class-link" to="/orders">Requests</Link></NavItem>
             </Nav>
             <Switch>
                 {/* <Route exact path="/" component={}></Route>  */}

@@ -11,6 +11,7 @@ constructor(props){
     this.state={
         requesterName:"",
         requesterEmail:"",
+        requesterPhoneNumber:"",
         itemName: "",
         englishItemName:"",
         itemDescription:"", 
@@ -19,6 +20,7 @@ constructor(props){
     
     this.handleRequesterName=this.handleRequesterName.bind(this);
     this.handleRequesterEmail=this.handleRequesterEmail.bind(this);
+    this.handleRequesterPhoneNumber=this.handleRequesterPhoneNumber.bind(this);
     this.handleItemName=this.handleItemName.bind(this);
     this.handleEnglishItemName=this.handleEnglishItemName.bind(this);
     this.handleItemDescription=this.handleItemDescription.bind(this);
@@ -32,6 +34,10 @@ handleRequesterName(event){
 handleRequesterEmail(event){
     event.preventDefault();
     this.setState({requesterEmail: event.target.value})   
+}
+handleRequesterPhoneNumber(event){
+    event.preventDefault();
+    this.setState({requesterPhoneNumber: event.target.value})   
 }
 handleItemName(event){
     event.preventDefault();
@@ -59,6 +65,7 @@ submitButtonHandler(event){
     axios.post('/book_store/v1/requests', {
         requesterName: this.state.requesterName,
         requesterEmail:this.state.requesterEmail,
+        requesterPhoneNumber:this.state.requesterPhoneNumber,
         itemName: this.state.itemName,
         englishItemName:this.state.englishItemName,
         itemDescription:this.state.itemDescription, 
@@ -74,12 +81,6 @@ submitButtonHandler(event){
     
     }
 render(){
-    requesterName:"",
-    requesterEmail:"",
-    itemName: "",
-    englishItemName:"",
-    itemDescription:"", 
-    requestDate: "",
     return(
         <Container id="main-div-request-page">
         <h1 id="request-page-h1">Welcome to "Matreshka, Inc."</h1>
@@ -92,34 +93,27 @@ render(){
                             <Input   type="text" name="requeserName" id="input-request-email" value={this.state.requeserName} onChange={this.handleRequesterName} placeholder="Enter your name"/>
                         </FormGroup>
                         <FormGroup className="form-request-mini-divs">
-                            <p className="request-display-p">Enter your Email</p>
-                            <Input   type="text" name="email" id="input-request-email" value={this.state.email} onChange={this.handleEmail} placeholder="Enter your email"/>
+                            <p className="request-display-p">Enter your email</p>
+                            <Input   type="text" name="requesterEmail" id="input-request-email" value={this.state.requesterEmail} onChange={this.handleRequesterEmail} placeholder="Enter your email"/>
                         </FormGroup>
                         <FormGroup className="form-request-mini-divs">
-                            <p className="request-display-p">Enter Your Email</p>
-                            <Input   type="text" name="email" id="input-request-email" value={this.state.email} onChange={this.handleEmail} placeholder="Enter your email"/>
+                            <p className="request-display-p">Enter your phone number</p>
+                            <Input   type="text" name="requesterPhoneNumber" id="input-request-email" value={this.state.requesterPhoneNumber} onChange={this.handleRequesterPhoneNumber} placeholder="Enter your phone number"/>
                         </FormGroup>
                         <FormGroup className="form-request-mini-divs">
-                            <p className="request-display-p">Enter Your Email</p>
-                            <Input   type="text" name="email" id="input-request-email" value={this.state.email} onChange={this.handleEmail} placeholder="Enter your email"/>
+                            <p className="request-display-p">Enter the item name in Russian,if any</p>
+                            <Input   type="text" name="itemName" id="input-request-email" value={this.state.itemName} onChange={this.handleItemName} placeholder="Enter item name in Russian"/>
                         </FormGroup>
                         <FormGroup className="form-request-mini-divs">
-                            <p className="request-display-p">Enter Your Email</p>
-                            <Input   type="text" name="email" id="input-request-email" value={this.state.email} onChange={this.handleEmail} placeholder="Enter your email"/>
+                            <p className="request-display-p">Enter item name in English</p>
+                            <Input   type="text" name="englishItemName" id="input-request-email" value={this.state.englishItemName} onChange={this.handleEnglishItemName} placeholder="Enter item name in English"/>
                         </FormGroup>
                         <FormGroup className="form-request-mini-divs">
-                            <p className="request-display-p">Enter Your Email</p>
-                            <Input   type="text" name="email" id="input-request-email" value={this.state.email} onChange={this.handleEmail} placeholder="Enter your email"/>
-                        </FormGroup>
-                        <FormGroup className="form-request-mini-divs">
-                            <p className="request-display-p">Indicate your age</p>
-                            <Input   type="text" name="preferences" id="input-request-preferences" value={this.state.age} onChange={this.handleAge} placeholder="Enter your age"/>
+                            <p className="request-display-p">Enter item description, if any</p>
+                            <Input   type="text" name="itemDescription" id="input-request-email" value={this.state.itemDescription} onChange={this.handleItemDescription} placeholder="Enter item description"/>
                         </FormGroup>
                     </FormGroup>
-                    <FormGroup id="form-request-buttons-divs">
-                    <Button id="save-button-request" color="primary" class="btn btn-primary" type="submit">Save</Button>{' '}
-                    <Button id="cancel-button-request"class="btn btn-secondary" tag={Link} to="/food_search_info">Cancel</Button>
-                        </FormGroup>
+       
                 </Form>
             </Container>  
             </Container>

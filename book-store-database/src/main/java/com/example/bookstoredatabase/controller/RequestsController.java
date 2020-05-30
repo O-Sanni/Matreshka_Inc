@@ -59,6 +59,7 @@ public class RequestsController  {
 
         requests.setRequesterName(requests.getRequesterName());
         requests.setRequesterEmail(requests.getRequesterEmail());
+        requests.setRequesterPhoneNumber(requests.getRequesterPhoneNumber());
         requests.setItemName(requests.getItemName());
         requests.setEnglishItemName(requests.getEnglishItemName());
         requests.setItemDescription(requests.getItemDescription());
