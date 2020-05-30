@@ -11,8 +11,6 @@ constructor(props){
 super(props);
     this.state={
         bookList:[],
-        search: false,
-        open: false
     }
 
 
