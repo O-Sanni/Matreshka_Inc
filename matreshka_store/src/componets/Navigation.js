@@ -20,14 +20,14 @@ function Navigation(){
                 </NavItem>
                 <NavItem><Link className="class-link" to="/subscribe">Subscribe</Link></NavItem>
                 <NavItem><Link className="class-link" to="/from_russia">Gifts and Books from Russia</Link></NavItem>
-                <NavItem><Link className="class-link" to="/orders">Requests</Link></NavItem>
+                <NavItem><Link className="class-link" to="/requests">Requests</Link></NavItem>
             </Nav>
             <Switch>
                 {/* <Route exact path="/" component={}></Route>  */}
                 <Route exact path="/bestsellers" component={BookPage}></Route>
                 <Route exact path="/subscribe" component={Subscribe} ></Route>
                 <Route exact path="/from_russia" component={RussianBooksAndGifts}></Route>
-                <Route exact path="/orders" component={Requests} ></Route>
+                <Route exact path="/requests" component={Requests} ></Route>
                 {/* <Route exact path="/admin" component={AdminsPage} ></Route> */}
             </Switch>
         </Router>

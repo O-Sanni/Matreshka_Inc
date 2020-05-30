@@ -1,7 +1,7 @@
 import React from "react";
 import { Link} from "react-router-dom";
 import axios from "axios";
-import { Button, Container, Form, FormGroup, Input }  from 'reactstrap';
+import { Button, Container, Form, FormGroup, Input,ButtonGroup }  from 'reactstrap';
 
 class Subscribe extends React.Component{
 
@@ -57,7 +57,6 @@ render(){
             <Container id="subscribe-page-form-div">
             <p id="p-subscribe">Please subscribe to receive our daily updates</p>
                 <Form onSubmit={this.submitButtonHandler}>
-                    <FormGroup id="form-subscribe-inputs-div">
                         <FormGroup className="form-subscribe-mini-divs">
                             <p className="subscribe-display-p">Enter your email</p>
                             <Input   type="text" name="email" id="input-subscribe-email" value={this.state.email} onChange={this.handleEmail} placeholder="Enter your email"/>
@@ -70,11 +69,11 @@ render(){
                             <p className="subscribe-display-p">Indicate your age</p>
                             <Input   type="text" name="preferences" id="input-subscribe-preferences" value={this.state.age} onChange={this.handleAge} placeholder="Enter your age"/>
                         </FormGroup>
-                    </FormGroup>
-                    <FormGroup id="form-subscribe-buttons-divs">
+                    
+                    <ButtonGroup id="form-subscribe-buttons-divs">
                     <Button id="save-button-subscribe" color="primary" class="btn btn-primary" type="submit">Save</Button>{' '}
                     <Button id="cancel-button-subscribe"class="btn btn-secondary" tag={Link} to="/food_search_info">Cancel</Button>
-                        </FormGroup>
+                        </ButtonGroup>
                 </Form>
             </Container>  
             </Container>

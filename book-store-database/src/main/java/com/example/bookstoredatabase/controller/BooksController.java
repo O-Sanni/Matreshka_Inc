@@ -59,6 +59,7 @@ public class BooksController  {
                 .orElseThrow(()-> new ResourcesNotFoundException("User Receipt not found for this id :: " + bookId));
 
         books.setBookName(books.getBookName());
+        books.setBookEnglishName(books.getBookEnglishName());
         books.setBookAuthor(books.getBookAuthor());
         books.setBookDescription(books.getBookDescription());
         books.setBookCategory(books.getBookCategory());

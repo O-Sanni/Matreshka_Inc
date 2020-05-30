@@ -52,7 +52,7 @@ public class RequestsController  {
 //  Update request
 
     @PutMapping("/requests/{id}")
-    public ResponseEntity<Requests> updateSubscription(@PathVariable(value = "id") Long requestId, @Valid @RequestBody Requests requestsDetails)
+    public ResponseEntity<Requests> updateRequest(@PathVariable(value = "id") Long requestId, @Valid @RequestBody Requests requestsDetails)
             throws ResourcesNotFoundException {
         Requests requests = requestsRepository.findById(requestId)
                 .orElseThrow(()-> new ResourcesNotFoundException("User Receipt not found for this id :: " + requestId));
@@ -62,7 +62,6 @@ public class RequestsController  {
         requests.setRequesterPhoneNumber(requests.getRequesterPhoneNumber());
         requests.setItemName(requests.getItemName());
         requests.setEnglishItemName(requests.getEnglishItemName());
-        requests.setItemDescription(requests.getItemDescription());
         requests.setRequestDate(requests.getRequestDate());
         requests.setDateCompleted(requests.getDateCompleted());
 

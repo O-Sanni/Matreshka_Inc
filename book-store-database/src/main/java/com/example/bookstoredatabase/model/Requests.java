@@ -1,7 +1,6 @@
 package com.example.bookstoredatabase.model;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Entity
 @Table(name = "requests")
@@ -29,20 +28,17 @@ public class Requests {
     @Column(name = "english_item_name")
     private String englishItemName;
 
-    @Column(name = "item_description")
-    private String itemDescription;
-
     @Column(name = "request_date")
-    private Date requestDate;
+    private String requestDate;
 
     @Column(name = "date_completed")
-    private Date dateCompleted;
+    private String dateCompleted;
 
     public Requests() {
         super();
     }
 
-    public Requests(String requesterName, String requesterEmail, String requesterPhoneNumber, String itemName, String englishItemName, String itemDescription,Date requestDate, Date dateCompleted) {
+    public Requests(String requesterName, String requesterEmail, String requesterPhoneNumber, String itemName, String englishItemName, String requestDate, String dateCompleted) {
         super();
 
         this.requesterName = requesterName;
@@ -50,7 +46,6 @@ public class Requests {
         this.requesterPhoneNumber=requesterPhoneNumber;
         this.itemName = itemName;
         this.englishItemName=englishItemName;
-        this.itemDescription = itemDescription;
         this.requestDate=requestDate;
         this.dateCompleted=dateCompleted;
     }
@@ -67,7 +62,7 @@ public class Requests {
         return requesterName;
     }
 
-    public void setRequesterName(String requesterNameName) {
+    public void setRequesterName(String requesterName) {
         this.requesterName = requesterName;
     }
 
@@ -102,26 +97,19 @@ public class Requests {
         this.englishItemName=englishItemName;
     }
 
-    public String getItemDescription() {
-        return itemDescription;
-    }
-
-    public void setItemDescription(String itemDescription) {
-        this.itemDescription = itemDescription;
-    }
-    public Date getRequestDate() {
+    public String getRequestDate() {
         return requestDate;
     }
 
-    public void setRequestDate(Date requestDate) {
+    public void setRequestDate(String requestDate) {
         this.requestDate = requestDate;
     }
 
-    public Date getDateCompleted() {
+    public String getDateCompleted() {
         return dateCompleted;
     }
 
-    public void setDateCompleted(Date dateCompleted) {
+    public void setDateCompleted(String dateCompleted) {
         this.dateCompleted = dateCompleted;
     }
 }

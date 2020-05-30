@@ -17,10 +17,11 @@ public class Books {
     @Column(name = "book_id")
     private long bookId;
 
-
     @Column(name = "book_name")
     private String bookName;
 
+    @Column(name = "book_english_name")
+    private String bookEnglishName;
 
     @Column(name = "book_author")
     private String bookAuthor;
@@ -44,10 +45,11 @@ public class Books {
         super();
     }
 
-    public Books (String bookName,String bookAuthor, String bookDescription,String bookCategory, double bookPrice, String bookWebsite, String bookPicture) {
+    public Books (String bookName,String bookEnglishName, String bookAuthor, String bookDescription,String bookCategory, double bookPrice, String bookWebsite, String bookPicture) {
         super();
 
         this.bookName = bookName;
+        this.bookEnglishName=bookEnglishName;
         this.bookAuthor=bookAuthor;
         this.bookDescription = bookDescription;
         this.bookCategory = bookCategory;
@@ -70,6 +72,12 @@ public class Books {
 
     public void setBookName(String bookName) {
         this.bookName = bookName;
+    }
+    public String getBookEnglishName(){
+        return bookEnglishName;
+    }
+    public void setBookEnglishName(String bookEnglishName){
+        this.bookEnglishName=bookEnglishName;
     }
     public String getBookAuthor() {
         return bookAuthor;
