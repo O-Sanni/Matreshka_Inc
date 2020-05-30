@@ -9,15 +9,32 @@ class Subscribe extends React.Component{
 constructor(props){
     super(props);
     this.state={
-        email:"",
-        age:""
+        requesterName:"",
+        requesterEmail:"",
+        itemName: "",
+        englishItemName:"",
+        itemDescription:"", 
+        requestDate: "",
+        dateCompleted:""
     }
     
-    this.handleEmail=this.handleEmail.bind(this);
-    this.handleAge=this.handleAge.bind(this);
-    this.submitButtonHandler=this.submitButtonHandler.bind(this);
+    this.handleRequesterName=this.handleRequesterName.bind(this);
+    this.handlerequesterEmail=this.handlerequesterEmail.bind(this);
+    this.handleitemName=this.handleitemName.bind(this);
+    this.handleEnglishItemName=this.handleEnglishItemName.bind(this);
+    this.handleItemDescription=this.handleAItemDescription.bind(this);
+    this.handleRequestDate=this.handleRequestDate.bind(this);
+    this.submitDateCompleted=this.submitDateCompleted.bind(this);
     }
 
+handleRequesterName(event){
+    event.preventDefault();
+    this.setState({requesterName: event.target.value})
+}
+handleAge(event){
+    event.preventDefault();
+    this.setState({requesterEmail: event.target.value})   
+}
 handleEmail(event){
     event.preventDefault();
     this.setState({email: event.target.value})
@@ -27,12 +44,31 @@ handleAge(event){
     this.setState({age: event.target.value})
     
 }
+handleEmail(event){
+    event.preventDefault();
+    this.setState({email: event.target.value})
+}
+handleAge(event){
+    event.preventDefault();
+    this.setState({age: event.target.value})
+    
+}
+handleAge(event){
+    event.preventDefault();
+    this.setState({age: event.target.value})
+    
+}
 
-async submitButtonHandler(event){
+submitButtonHandler(event){
     event.preventDefault();
     axios.post('/book_store/v1/requests', {
-        email: this.state.email,
-        age: this.state.age
+        requesterName: this.state.requesterName,
+        requesterEmail:this.state.requesterEmail,
+        itemName: this.state.itemName,
+        englishItemName:this.state.englishItemName,
+        itemDescription:this.state.itemDescription, 
+        requestDate: this.state.requestDate,
+        dateCompleted:this.state.dateCompleted
       })
       .then(function (response) {
         console.log(response);
@@ -51,6 +87,26 @@ render(){
             <p id="p-subscribe">Please subscribe to receive our daily updates</p>
                 <Form onSubmit={this.submitButtonHandler}>
                     <FormGroup id="form-subscribe-inputs-div">
+                        <FormGroup className="form-subscribe-mini-divs">
+                            <p className="subscribe-display-p">Enter Your Email</p>
+                            <Input   type="text" name="email" id="input-subscribe-email" value={this.state.email} onChange={this.handleEmail} placeholder="Enter your email"/>
+                        </FormGroup>
+                        <FormGroup className="form-subscribe-mini-divs">
+                            <p className="subscribe-display-p">Enter Your Email</p>
+                            <Input   type="text" name="email" id="input-subscribe-email" value={this.state.email} onChange={this.handleEmail} placeholder="Enter your email"/>
+                        </FormGroup>
+                        <FormGroup className="form-subscribe-mini-divs">
+                            <p className="subscribe-display-p">Enter Your Email</p>
+                            <Input   type="text" name="email" id="input-subscribe-email" value={this.state.email} onChange={this.handleEmail} placeholder="Enter your email"/>
+                        </FormGroup>
+                        <FormGroup className="form-subscribe-mini-divs">
+                            <p className="subscribe-display-p">Enter Your Email</p>
+                            <Input   type="text" name="email" id="input-subscribe-email" value={this.state.email} onChange={this.handleEmail} placeholder="Enter your email"/>
+                        </FormGroup>
+                        <FormGroup className="form-subscribe-mini-divs">
+                            <p className="subscribe-display-p">Enter Your Email</p>
+                            <Input   type="text" name="email" id="input-subscribe-email" value={this.state.email} onChange={this.handleEmail} placeholder="Enter your email"/>
+                        </FormGroup>
                         <FormGroup className="form-subscribe-mini-divs">
                             <p className="subscribe-display-p">Enter Your Email</p>
                             <Input   type="text" name="email" id="input-subscribe-email" value={this.state.email} onChange={this.handleEmail} placeholder="Enter your email"/>

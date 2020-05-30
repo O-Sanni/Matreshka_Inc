@@ -10,10 +10,12 @@ constructor(props){
     super(props);
     this.state={
         email:"",
+        fullName: "",
         age:""
     }
     
     this.handleEmail=this.handleEmail.bind(this);
+    this.handleFullName=this.handleFullName.bind(this);
     this.handleAge=this.handleAge.bind(this);
     this.submitButtonHandler=this.submitButtonHandler.bind(this);
     }
@@ -22,16 +24,22 @@ handleEmail(event){
     event.preventDefault();
     this.setState({email: event.target.value})
 }
+handleFullName(event){
+    event.preventDefault();
+    this.setState({fullName: event.target.value})
+    
+}
 handleAge(event){
     event.preventDefault();
     this.setState({age: event.target.value})
     
 }
 
-async submitButtonHandler(event){
+submitButtonHandler(event){
     event.preventDefault();
     axios.post('/book_store/v1/subscribe', {
         email: this.state.email,
+        fullName: this.state.fullName,
         age: this.state.age
       })
       .then(function (response) {
@@ -40,10 +48,9 @@ async submitButtonHandler(event){
       .catch(function (error) {
         console.log(error);
       });
-    
+    this.setState({email:"", fullName: "", age:""})
     }
 render(){
-    const {item}=this.state
     return(
         <Container id="main-div-subscribe-page">
         <h1 id="subscribe-page-h1">Welcome to "Matreshka, Inc."</h1>
@@ -54,6 +61,10 @@ render(){
                         <FormGroup className="form-subscribe-mini-divs">
                             <p className="subscribe-display-p">Enter Your Email</p>
                             <Input   type="text" name="email" id="input-subscribe-email" value={this.state.email} onChange={this.handleEmail} placeholder="Enter your email"/>
+                        </FormGroup>
+                        <FormGroup className="form-subscribe-mini-divs">
+                            <p className="subscribe-display-p">Enter Your full name</p>
+                            <Input   type="text" name="fullName" id="input-subscribe-email" value={this.state.fullName} onChange={this.handleFullName} placeholder="Enter your full name"/>
                         </FormGroup>
                         <FormGroup className="form-subscribe-mini-divs">
                             <p className="subscribe-display-p">Indicate your age</p>

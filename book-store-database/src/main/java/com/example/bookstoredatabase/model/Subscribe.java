@@ -19,6 +19,8 @@ public class Subscribe {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "full_name")
+    private String fullName;
 
     @Column(name = "age")
     private int age;
@@ -27,9 +29,10 @@ public class Subscribe {
         super();
     }
 
-    public Subscribe(String email, int age) {
+    public Subscribe(String email,String fullName, int age) {
         super();
         this.email = email;
+        this.fullName = fullName;
         this.age = age;
     }
 
@@ -47,6 +50,13 @@ public class Subscribe {
     }
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public void setAge(int age) {

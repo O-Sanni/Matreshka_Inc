@@ -61,6 +61,7 @@ public class SubscribeController {
 
 
         subscribe.setEmail(subscribeDetails.getEmail());
+        subscribe.setFullName(subscribeDetails.getFullName());
         subscribe.setAge(subscribeDetails.getAge());
 
 

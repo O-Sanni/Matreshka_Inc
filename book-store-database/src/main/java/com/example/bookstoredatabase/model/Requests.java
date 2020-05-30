@@ -24,6 +24,9 @@ public class Requests {
     @Column(name = "item_name")
     private String itemName;
 
+    @Column(name = "english_item_name")
+    private String englishItemName;
+
     @Column(name = "item_description")
     private String itemDescription;
 
@@ -37,12 +40,13 @@ public class Requests {
         super();
     }
 
-    public Requests(String requesterName, String requesterEmail, String itemName, String itemDescription,Date requestDate, Date dateCompleted) {
+    public Requests(String requesterName, String requesterEmail, String itemName, String englishItemName, String itemDescription,Date requestDate, Date dateCompleted) {
         super();
 
         this.requesterName = requesterName;
         this.requesterEmail = requesterEmail;
         this.itemName = itemName;
+        this.englishItemName=englishItemName;
         this.itemDescription = itemDescription;
         this.requestDate=requestDate;
         this.dateCompleted=dateCompleted;
@@ -60,7 +64,7 @@ public class Requests {
         return requesterName;
     }
 
-    public void setRequesterName(String userName) {
+    public void setRequesterName(String requesterNameName) {
         this.requesterName = requesterName;
     }
 
@@ -78,6 +82,14 @@ public class Requests {
 
     public void setItemName(String itemName) {
         this.itemName = itemName;
+    }
+
+    public String getEnglishItemName(){
+        return englishItemName;
+    }
+
+    public void setEnglishItemName(String englishItemName){
+        this.englishItemName=englishItemName;
     }
 
     public String getItemDescription() {

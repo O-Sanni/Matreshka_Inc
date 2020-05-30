@@ -60,6 +60,7 @@ public class RequestsController  {
         requests.setRequesterName(requests.getRequesterName());
         requests.setRequesterEmail(requests.getRequesterEmail());
         requests.setItemName(requests.getItemName());
+        requests.setEnglishItemName(requests.getEnglishItemName());
         requests.setItemDescription(requests.getItemDescription());
         requests.setRequestDate(requests.getRequestDate());
         requests.setDateCompleted(requests.getDateCompleted());
