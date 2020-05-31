@@ -18,7 +18,7 @@ class RussianBooks extends React.Component{
         async getBooks(){
  
             try{
-                let books= await axios.get(`https://matreshka-store.herokuapp.com/book_store/v1/books`)
+                let books= await axios.get(`https://matreshka-database.herokuapp.com/book_store/v1/books`)
                 this.setState({russianBookList:books.data})
             }
             catch(error){

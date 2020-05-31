@@ -24,7 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://matreshka-store.herokuapp.com/",
+  "proxy": "https://matreshka-database.herokuapp.com/",
   "eslintConfig": {
     "extends": "react-app"
   },
