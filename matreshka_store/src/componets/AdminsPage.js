@@ -1,7 +1,9 @@
 import React from "react";
 import axios from "axios";
 
-
+let headersConfig={
+    "Access-Control-Allow-Origin": "http://localhost:3000"
+}
 class AdminsPage extends React.Component{
 constructor(props){
     super(props);
@@ -19,7 +21,7 @@ this.getSubscribe();
 
   async getGiftsInfo(){
     try{
-        let giftsData= await axios.get(`https://matreshka-database.herokuapp.com/book_store/v1/gifts`)
+        let giftsData= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts`,headersConfig )
         this.setState({russianGifts:giftsData.data})
         console.log(this.state.russianGifts)
     }
@@ -29,7 +31,7 @@ this.getSubscribe();
 }
 async getBooksInfo(){
     try{
-        let booksData= await axios.get(`https://matreshka-database.herokuapp.com/book_store/v1/books`)
+        let booksData= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books`)
         this.setState({russianBooks:booksData.data})
         console.log(this.state.russianBooks)
     }
@@ -39,7 +41,7 @@ async getBooksInfo(){
 }
 async getSubscribe(){
     try{
-        let subscribeData= await axios.get(`https://matreshka-database.herokuapp.com/book_store/v1/subscribe`)
+        let subscribeData= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/subscribe`)
         this.setState({subscribe:subscribeData.data})
         console.log(this.state.subscribe)
     }
@@ -49,7 +51,7 @@ async getSubscribe(){
 }
 async getRequests(){
     try{
-        let requestsData= await axios.get(`https://matreshka-database.herokuapp.com/book_store/v1/requests`)
+        let requestsData= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/requests`)
         this.setState({requests:requestsData.data})
         console.log(this.state.requests)
     }

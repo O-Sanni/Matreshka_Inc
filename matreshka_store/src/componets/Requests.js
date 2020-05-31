@@ -58,7 +58,7 @@ handleRequestDate(event){
 
 submitButtonHandler(event){
     event.preventDefault();
-    axios.post('https://matreshka-database.herokuapp.com/book_store/v1/requests', {
+    axios.post('https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/requests', {
         requesterName: this.state.requesterName,
         requesterEmail:this.state.requesterEmail,
         requesterPhoneNumber:this.state.requesterPhoneNumber,
@@ -74,6 +74,7 @@ submitButtonHandler(event){
         console.log(error);
       });
     this.setState({ requesterName:"", requesterEmail:"", requesterPhoneNumber:"", itemName: "", englishItemName:"",requestDate:"" })
+
     }
 
 render(){
