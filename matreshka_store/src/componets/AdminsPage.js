@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 
 class AdminsPage extends React.Component{
@@ -6,17 +7,21 @@ constructor(props){
     super(props);
 
         this.state = {russianBooks: [], russianGifts:[], subscribe:[], requests:[]};
-        this.remove = this.remove.bind(this);
+        // this.remove = this.remove.bind(this);
 
     }
   componentDidMount() {
-
+this.getGiftsInfo();
+this.getBooksInfo();
+this.getRequests();
+this.getSubscribe();
   }
 
   async getGiftsInfo(){
     try{
         let giftsData= await axios.get(`https://matreshka-database.herokuapp.com/book_store/v1/gifts`)
         this.setState({russianGifts:giftsData.data})
+        console.log(this.state.russianGifts)
     }
     catch(error){
         console.log(error)
@@ -26,6 +31,7 @@ async getBooksInfo(){
     try{
         let booksData= await axios.get(`https://matreshka-database.herokuapp.com/book_store/v1/books`)
         this.setState({russianBooks:booksData.data})
+        console.log(this.state.russianBooks)
     }
     catch(error){
         console.log(error)
@@ -35,6 +41,7 @@ async getSubscribe(){
     try{
         let subscribeData= await axios.get(`https://matreshka-database.herokuapp.com/book_store/v1/subscribe`)
         this.setState({subscribe:subscribeData.data})
+        console.log(this.state.subscribe)
     }
     catch(error){
         console.log(error)
@@ -44,6 +51,7 @@ async getRequests(){
     try{
         let requestsData= await axios.get(`https://matreshka-database.herokuapp.com/book_store/v1/requests`)
         this.setState({requests:requestsData.data})
+        console.log(this.state.requests)
     }
     catch(error){
         console.log(error)
@@ -64,6 +72,9 @@ async getRequests(){
 //   }
 
   render() {
+      return(<div>
+
+      </div>)
 //     const {employees, isLoading} = this.state;
 
 //     if (isLoading) {

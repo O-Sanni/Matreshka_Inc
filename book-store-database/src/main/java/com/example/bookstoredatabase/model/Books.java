@@ -26,7 +26,7 @@ public class Books {
     @Column(name = "book_author")
     private String bookAuthor;
 
-    @Column(name = "book_description")
+    @Column(name = "book_description",length = 1500)
     private String bookDescription;
 
     @Column(name = "book_category")

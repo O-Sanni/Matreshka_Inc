@@ -21,7 +21,7 @@ public class Gifts {
     @Column(name = "gift_name")
     private String giftName;
 
-    @Column(name = "gift_description")
+    @Column(name = "gift_description", length = 1500)
     private String giftDescription;
 
     @Column(name = "gift_price")
