@@ -25,19 +25,18 @@ class RussianGifts extends React.Component{
                 console.log(error)
             }
         }
+  
         checkIfExist(){ 
             if(this.state.russianGiftList===undefined){}
             else{
                 let gifts=this.state.russianGiftList.map(res=> {
                     return (
                         <div className="">
-                             <h2 className="">Title: {res.bookName} ({res.bookEnglishName}) </h2> 
-                             <p className=""><span class="">Author: </span>{res.bookAuthor}</p>
-                             <p className=""><span class="">Description: </span>{res.bookDescription}</p>
-                             <p className=""><span class="">Category: </span>{res.bookCategory}</p>
-                             <p className=""><span class="">Price: </span>${res.bookPrice}</p>
-                             <p className=""><span class="">Buy at: </span><a href={res.bookWebsite}>Direct webste</a></p>
-                            <img className="" src={res.bookPicture} alt="book image" />
+                             <h2 className="">Name: {res.giftName}</h2> 
+                             <p className=""><span class="">Description: </span>{res.giftDescription}</p>
+                             <p className=""><span class="">Price: </span>${res.giftPrice}</p>
+                             <p className=""><span class="">Buy at: </span><a href={res.giftWebsite}>Direct website</a></p>
+                            <img className="" src={res.giftPicture} alt="gift image" />
                             </div>
                 )})
                 return Gifts;
