@@ -18,8 +18,8 @@ class RussianGifts extends React.Component{
         async getGifts(){
  
             try{
-                let gifts= await axios.get(`/book_store/v1/gifts`)
-                this.setState({russianGiftList:gifts.data})
+                let giftsData= await axios.get(`/book_store/v1/gifts`)
+                this.setState({russianGiftList:giftsData.data})
             }
             catch(error){
                 console.log(error)
@@ -39,7 +39,7 @@ class RussianGifts extends React.Component{
                             <img className="" src={res.giftPicture} alt="gift image" />
                             </div>
                 )})
-                return Gifts;
+                return gifts;
             }
            
         }
