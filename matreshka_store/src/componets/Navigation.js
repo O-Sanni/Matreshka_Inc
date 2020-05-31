@@ -4,7 +4,6 @@ import { Nav, NavItem}  from 'reactstrap';
 import Subscribe from "./Subscribe";
 import BookPage from "./BookPage";
 import Requests from "./Requests";
-import RussianBooksAndGifts from "./RussianBooksAndGifts";
 import AdminsPage from "./AdminsPage";
 
 
@@ -26,7 +25,6 @@ function Navigation(){
                 {/* <Route exact path="/" component={}></Route>  */}
                 <Route exact path="/bestsellers" component={BookPage}></Route>
                 <Route exact path="/subscribe" component={Subscribe} ></Route>
-                <Route exact path="/from_russia" component={RussianBooksAndGifts}></Route>
                 <Route exact path="/requests" component={Requests} ></Route>
                 {/* <Route exact path="/admin" component={AdminsPage} ></Route> */}
             </Switch>

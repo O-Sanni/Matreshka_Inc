@@ -37,7 +37,7 @@ handleAge(event){
 
 submitButtonHandler(event){
     event.preventDefault();
-    axios.post('/book_store/v1/subscribe', {
+    axios.post('https://matreshka-store.herokuapp.com/book_store/v1/subscribe', {
         email: this.state.email,
         fullName: this.state.fullName,
         age: this.state.age
