@@ -58,7 +58,6 @@ render(){
     return(
         <Container id="main-div-subscribe-page">
         <Navigation />
-        <h1 id="subscribe-page-h1">Welcome to "Matreshka, Inc."</h1>
             <Container id="subscribe-page-form-div">
             <p id="p-subscribe">Please subscribe to receive our daily updates</p>
                 <Form onSubmit={this.submitButtonHandler}>

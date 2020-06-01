@@ -56,16 +56,16 @@ public class BooksController  {
     public ResponseEntity<Books> updateBooks(@PathVariable(value = "id") Long bookId, @Valid @RequestBody Books booksDetails)
             throws ResourcesNotFoundException {
         Books books = booksRepository.findById(bookId)
-                .orElseThrow(()-> new ResourcesNotFoundException("User Receipt not found for this id :: " + bookId));
+                .orElseThrow(()-> new ResourcesNotFoundException("Book not found for this id :: " + bookId));
 
-        books.setBookName(books.getBookName());
-        books.setBookEnglishName(books.getBookEnglishName());
-        books.setBookAuthor(books.getBookAuthor());
-        books.setBookDescription(books.getBookDescription());
-        books.setBookCategory(books.getBookCategory());
-        books.setBookPrice(books.getBookPrice());
-        books.setBookWebsite(books.getBookWebsite());
-        books.setBookPicture(books.getBookPicture());
+        books.setBookName(booksDetails.getBookName());
+        books.setBookEnglishName(booksDetails.getBookEnglishName());
+        books.setBookAuthor(booksDetails.getBookAuthor());
+        books.setBookDescription(booksDetails.getBookDescription());
+        books.setBookCategory(booksDetails.getBookCategory());
+        books.setBookPrice(booksDetails.getBookPrice());
+        books.setBookWebsite(booksDetails.getBookWebsite());
+        books.setBookPicture(booksDetails.getBookPicture());
 
         final Books updatedBooks = booksRepository.save(books);
 

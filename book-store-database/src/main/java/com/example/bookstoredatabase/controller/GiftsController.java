@@ -57,13 +57,13 @@ public class GiftsController {
     public ResponseEntity<Gifts> updateGifts(@PathVariable(value = "id") Long giftsId, @Valid @RequestBody Gifts giftsDetails)
             throws ResourcesNotFoundException {
         Gifts gifts = giftsRepository.findById(giftsId)
-                .orElseThrow(() -> new ResourcesNotFoundException("User Receipt not found for this id :: " + giftsId));
+                .orElseThrow(() -> new ResourcesNotFoundException("Gift not found for this id :: " + giftsId));
 
-        gifts.setGiftName(gifts.getGiftName());
-        gifts.setGiftDescription(gifts.getGiftDescription());
-        gifts.setGiftPrice(gifts.getGiftPrice());
-        gifts.setGiftWebsite(gifts.getGiftWebsite());
-        gifts.setGiftPicture(gifts.getGiftPicture());
+        gifts.setGiftName(giftsDetails.getGiftName());
+        gifts.setGiftDescription(giftsDetails.getGiftDescription());
+        gifts.setGiftPrice(giftsDetails.getGiftPrice());
+        gifts.setGiftWebsite(giftsDetails.getGiftWebsite());
+        gifts.setGiftPicture(giftsDetails.getGiftPicture());
 
         final Gifts updatedGifts = giftsRepository.save(gifts);
 
@@ -71,6 +71,7 @@ public class GiftsController {
         return ResponseEntity.ok(updatedGifts);
 
     }
+
 
 //  Delete gifts
 

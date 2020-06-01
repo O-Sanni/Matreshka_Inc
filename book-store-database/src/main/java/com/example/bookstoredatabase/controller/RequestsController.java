@@ -52,18 +52,18 @@ public class RequestsController  {
 //  Update request
 
     @PutMapping("/requests/{id}")
-    public ResponseEntity<Requests> updateRequest(@PathVariable(value = "id") Long requestId, @Valid @RequestBody Requests requestsDetails)
+    public ResponseEntity<Requests> updateRequest(@PathVariable(value = "id") Long requestId, @Valid @RequestBody Requests requestDetails)
             throws ResourcesNotFoundException {
         Requests requests = requestsRepository.findById(requestId)
-                .orElseThrow(()-> new ResourcesNotFoundException("User Receipt not found for this id :: " + requestId));
+                .orElseThrow(() -> new ResourcesNotFoundException("Request not found for this id :: " + requestId));
 
-        requests.setRequesterName(requests.getRequesterName());
-        requests.setRequesterEmail(requests.getRequesterEmail());
-        requests.setRequesterPhoneNumber(requests.getRequesterPhoneNumber());
-        requests.setItemName(requests.getItemName());
-        requests.setEnglishItemName(requests.getEnglishItemName());
-        requests.setRequestDate(requests.getRequestDate());
-        requests.setDateCompleted(requests.getDateCompleted());
+        requests.setRequesterName(requestDetails.getRequesterName());
+        requests.setRequesterEmail(requestDetails.getRequesterEmail());
+        requests.setRequesterPhoneNumber(requestDetails.getRequesterPhoneNumber());
+        requests.setItemName(requestDetails.getItemName());
+        requests.setEnglishItemName(requestDetails.getEnglishItemName());
+        requests.setRequestDate(requestDetails.getRequestDate());
+        requests.setDateCompleted(requestDetails.getDateCompleted());
 
         final Requests updatedRequests = requestsRepository.save(requests);
 

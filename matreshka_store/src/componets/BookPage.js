@@ -2,6 +2,8 @@ import React from "react"
 import BookSearch from "./BookSearch"
 import { Button, Input, FormGroup, Label, Container} from 'reactstrap';
 import Navigation from "./Navigation";
+import Translation from "./TranslationComponent";
+import Footer from "./Footer";
 
 
 class BookPage extends React.Component{
@@ -43,7 +45,9 @@ class BookPage extends React.Component{
                         </Label>
                         </FormGroup>
                           <Button  id="input-submit-transl" type="button" onClick={this.submitButton}>Submit</Button>
+                          <Translation />
                       {this.state.submitButton ? (<BookSearch typeSearch={this.state.typeSearch} />) : ""}
+                      <Footer />
                     </Container>
 
           )}

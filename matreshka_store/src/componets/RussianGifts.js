@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { Container} from 'reactstrap';
 import Navigation from "./Navigation";
+import Translation from "./TranslationComponent";
 
 
 
@@ -50,6 +51,7 @@ class RussianGifts extends React.Component{
             return(
                <Container>
                <Navigation />
+               <Translation />
                     {this.checkIfExist()}   
                </Container>
             )
