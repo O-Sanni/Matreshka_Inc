@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import axios from "axios";
 import { Link, withRouter } from 'react-router-dom';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
+import Navigation from "./Navigation";
 
-class AddOrEditbooks extends Component {
+class AddOrEditBooks extends Component {
   emptyBook = {
     bookName: "",
     bookEnglishName:"",
@@ -28,13 +29,14 @@ class AddOrEditbooks extends Component {
 
   componentDidMount() {
     if (this.props.match.params.id !== 'new') {
-    this.getbookInfo();
+    this.getBookInfo();
     }
   
   }
-async getbookInfo(){
+async getBookInfo(){
 try {
- const book= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/${this.state.id}`)
+ const book= await axios.get(`/book_store/v1/books/${this.state.id}`)
+//  https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/${this.state.id}
   this.setState({item:book.data});}
   catch(error){console.log(error)};
   this.setState({put:true})
@@ -54,7 +56,8 @@ try {
     event.preventDefault();
 
 if(this.state.put===true){
-  axios.put(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/${this.state.id}`, this.state.item)
+  axios.put(`/book_store/v1/books/${this.state.id}`, this.state.item)
+//   https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/${this.state.id}
   .then(function (response) {
     console.log(response);
   })
@@ -64,7 +67,8 @@ if(this.state.put===true){
     }
 
   else{
-      axios.post('https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/', this.state.item)
+      axios.post('/book_store/v1/books/', this.state.item)
+    //   https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/
       .then(function (response) {
         console.log(response);
       })
@@ -80,6 +84,7 @@ if(this.state.put===true){
     const {item} = this.state;
     const title = <h2>{item.id ? 'Edit books' : 'Add books'}</h2>;
     return <div>
+    <Navigation />
       <Container>
         {title}
         <Form onSubmit={this.handleSubmit}>
@@ -100,7 +105,7 @@ if(this.state.put===true){
           </FormGroup>
           <FormGroup>
             <Label for="bookDescription">book description</Label>
-            <Input type="text" name="bookDescription" id="bookDescription" value={item.bookDescription || ''}
+            <textarea type="text" name="bookDescription" id="bookDescription" value={item.bookDescription || ''}
                    onChange={this.handleChange} autoComplete="bookDescription"/>
           </FormGroup>
           <FormGroup>
@@ -125,7 +130,7 @@ if(this.state.put===true){
           </FormGroup>
           <FormGroup>
             <Button color="primary" type="submit">Save</Button>{' '}
-            <Button color="secondary" tag={Link} to="/employees">Cancel</Button>
+            <Button color="secondary" tag={Link} to="/admin">Cancel</Button>
           </FormGroup>
          
         </Form>
@@ -134,4 +139,4 @@ if(this.state.put===true){
   }
 }
 
-export default withRouter(AddOrEditbooks);
+export default withRouter(AddOrEditBooks);

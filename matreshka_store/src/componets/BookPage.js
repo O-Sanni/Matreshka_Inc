@@ -1,6 +1,7 @@
 import React from "react"
 import BookSearch from "./BookSearch"
 import { Button, Input, FormGroup, Label, Container} from 'reactstrap';
+import Navigation from "./Navigation";
 
 
 class BookPage extends React.Component{
@@ -29,6 +30,7 @@ class BookPage extends React.Component{
      render(){
           return (
                   <Container id="main-div-transl-page">
+                  <Navigation />
                     <FormGroup id="translate-box">
                         <Label for="options-language" id="select-lable"> 
                          Please choose type of book:

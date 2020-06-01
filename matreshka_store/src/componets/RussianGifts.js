@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Container} from 'reactstrap';
+import Navigation from "./Navigation";
 
 
 
@@ -18,7 +19,8 @@ class RussianGifts extends React.Component{
         async getGifts(){
  
             try{
-                let giftsData= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts`)
+                let giftsData= await axios.get(`/book_store/v1/gifts`)
+                // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts
                 this.setState({russianGiftList:giftsData.data})
             }
             catch(error){
@@ -47,6 +49,7 @@ class RussianGifts extends React.Component{
         render(){
             return(
                <Container>
+               <Navigation />
                     {this.checkIfExist()}   
                </Container>
             )

@@ -2,6 +2,8 @@ import React from "react";
 import { Link} from "react-router-dom";
 import axios from "axios";
 import { Button, Container, Form, FormGroup, Input,ButtonGroup }  from 'reactstrap';
+import Naigation from "./Navigation";
+import Navigation from "./Navigation";
 
 class Subscribe extends React.Component{
 
@@ -38,7 +40,8 @@ handleAge(event){
 submitButtonHandler(event){
     event.preventDefault();
    
-    axios.post('https://cors-anywhere.herokuapp.com/https://matreshka-store.herokuapp.com/book_store/v1/subscribe',{
+    axios.post('/book_store/v1/subscribe',{
+        // https://cors-anywhere.herokuapp.com/https://matreshka-store.herokuapp.com/book_store/v1/subscribe
         email: this.state.email,
         fullName: this.state.fullName,
         age: this.state.age
@@ -54,6 +57,7 @@ submitButtonHandler(event){
 render(){
     return(
         <Container id="main-div-subscribe-page">
+        <Navigation />
         <h1 id="subscribe-page-h1">Welcome to "Matreshka, Inc."</h1>
             <Container id="subscribe-page-form-div">
             <p id="p-subscribe">Please subscribe to receive our daily updates</p>

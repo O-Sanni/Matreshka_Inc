@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
 import { Button, Container, Form, FormGroup, Input, ButtonGroup }  from 'reactstrap';
+import Navigation from "./Navigation";
 
 
 class Requests extends React.Component{
@@ -58,7 +59,8 @@ handleRequestDate(event){
 
 submitButtonHandler(event){
     event.preventDefault();
-    axios.post('https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/requests', {
+    axios.post('/book_store/v1/requests', {
+        // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/requests
         requesterName: this.state.requesterName,
         requesterEmail:this.state.requesterEmail,
         requesterPhoneNumber:this.state.requesterPhoneNumber,
@@ -80,6 +82,7 @@ submitButtonHandler(event){
 render(){
     return(
         <Container id="main-div-request-page">
+        <Navigation />
          <p>Did not find something, please let us know, and we will do our best to find this item</p>
          <Form onSubmit={this.submitButtonHandler}>
                         <FormGroup className="form-request-mini-divs">

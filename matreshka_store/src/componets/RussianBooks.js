@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Container} from 'reactstrap';
+import Navigation from "./Navigation";
 
 class RussianBooks extends React.Component{
     constructor(props){
@@ -16,7 +17,8 @@ class RussianBooks extends React.Component{
         async getBooks(){
  
             try{
-                let books= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books`)
+                let books= await axios.get(`/book_store/v1/books`)
+                // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books
                 this.setState({russianBookList:books.data})
             }
             catch(error){
@@ -46,6 +48,7 @@ class RussianBooks extends React.Component{
         render(){
             return(
                <Container>
+               <Navigation />
                     {this.checkIfExist()}   
                </Container>
             )

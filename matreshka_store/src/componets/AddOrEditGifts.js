@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios";
 import { Link, withRouter } from 'react-router-dom';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
+import Navigation from "./Navigation";
 
 class AddOrEditGifts extends Component {
 
@@ -32,7 +33,8 @@ class AddOrEditGifts extends Component {
   }
 async getGiftInfo(){
 try {
- const gift= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/${this.state.id}`)
+ const gift= await axios.get(`/book_store/v1/gifts/${this.state.id}`)
+//  https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/${this.state.id}
   this.setState({item:gift.data});}
   catch(error){console.log(error)};
   this.setState({put:true})
@@ -52,7 +54,8 @@ try {
     event.preventDefault();
 
 if(this.state.put===true){
-  axios.put(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/${this.state.id}`, this.state.item)
+  axios.put(`/book_store/v1/gifts/${this.state.id}`, this.state.item)
+  // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/${this.state.id}
   .then(function (response) {
     console.log(response);
   })
@@ -62,7 +65,8 @@ if(this.state.put===true){
     }
 
   else{
-      axios.post('https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/', this.state.item)
+      axios.post(`/book_store/v1/gifts/`, this.state.item)
+      // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/
       .then(function (response) {
         console.log(response);
       })
@@ -78,6 +82,7 @@ if(this.state.put===true){
     const {item} = this.state;
     const title = <h2>{item.id ? 'Edit Gifts' : 'Add Gifts'}</h2>;
     return <div>
+    <Navigation />
       <Container>
         {title}
         <Form onSubmit={this.handleSubmit}>
@@ -108,7 +113,7 @@ if(this.state.put===true){
           </FormGroup>
           <FormGroup>
             <Button color="primary" type="submit">Save</Button>{' '}
-            <Button color="secondary" tag={Link} to="/employees">Cancel</Button>
+            <Button color="secondary" tag={Link} to="/admin">Cancel</Button>
           </FormGroup>
          
         </Form>

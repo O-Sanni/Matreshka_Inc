@@ -13,7 +13,8 @@ function Navigation(){
                 <NavItem><Link className="class-link" to="/bestsellers">New York Times Bestsellers</Link>
                 </NavItem>
                 <NavItem><Link className="class-link" to="/subscribe">Subscribe</Link></NavItem>
-                <NavItem><Link className="class-link" to="/from_russia">Gifts and Books from Russia</Link></NavItem>
+                <NavItem><Link className="class-link" to="/from_russia_gifts">Gifts from Russia</Link></NavItem>
+                <NavItem><Link className="class-link" to="/from_russia_books">Books from Russia</Link></NavItem>
                 <NavItem><Link className="class-link" to="/requests">Requests</Link></NavItem>
             </Nav>
     )
