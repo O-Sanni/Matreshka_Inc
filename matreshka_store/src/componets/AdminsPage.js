@@ -98,6 +98,7 @@ async removeSubscription(id) {
       console.log(error);
     });
 }
+
 checkBooks(){
 if(this.state.russianBooks===undefined){}
 else{
@@ -177,6 +178,7 @@ checkSubscription(){
 
   render() {
       return(<div>
+      {console.log(this.state.russianGifts, this.state.subscribe, this.state.russianBooks, this.state.requests)}
     <Navigation />
       <h1>List of Books</h1>
 {this.checkBooks()}

@@ -2,8 +2,6 @@ import React from "react";
 import axios from "axios";
 import { Container} from 'reactstrap';
 
-
-
 class RussianBooks extends React.Component{
     constructor(props){
         super(props);
