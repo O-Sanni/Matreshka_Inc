@@ -15,8 +15,9 @@ class AddOrEditGifts extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = { 
       item: this.emptyGift,
+      id : this.props.match.params.id,
       put: false
     };
     this.handleChange = this.handleChange.bind(this);
@@ -25,13 +26,18 @@ class AddOrEditGifts extends Component {
 
   componentDidMount() {
     if (this.props.match.params.id !== 'new') {
-      axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/${this.props.match.params.id}`)
-      .than(res=>{this.setState({item:res})})
-      .catch(error=>console.log(error));
-      this.setState({put:true})
+    this.getGiftInfo();
     }
   
   }
+async getGiftInfo(){
+try {
+ const gift= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/${this.state.id}`)
+  this.setState({item:gift.data});}
+  catch(error){console.log(error)};
+  this.setState({put:true})
+}
+
 
   handleChange(event) {
     const target = event.target;
@@ -44,30 +50,27 @@ class AddOrEditGifts extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    const {item} = this.state;
 
 if(this.state.put===true){
-    await fetch(`/niecey_api/v1/employees/${item.id}`, {
-      method:'PUT',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(item),
-    });
-    this.props.history.push('/employees');
-  }
+  axios.put(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/${this.state.id}`, this.state.item)
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+    }
 
   else{
-    await fetch(`/niecey_api/v1/employees/`, {
-      method:'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(item)
-    });
-    this.props.history.push('/employees');
+      axios.post('https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/', this.state.item)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    this.setState({ item: this.emptyGift})
+
   }
   }
 

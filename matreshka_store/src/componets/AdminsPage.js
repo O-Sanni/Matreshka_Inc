@@ -1,11 +1,10 @@
 import React from "react";
 import axios from "axios";
-import { Button, Container, Form, FormGroup, Input, ButtonGroup }  from 'reactstrap';
+import { Button, ButtonGroup }  from 'reactstrap';
+import Navigation from "./Navigation";
 import { Link } from "react-router-dom";
 
-let headersConfig={
-    "Access-Control-Allow-Origin": "http://localhost:3000"
-}
+
 class AdminsPage extends React.Component{
 constructor(props){
     super(props);
@@ -27,7 +26,7 @@ this.getSubscribe();
 
   async getGiftsInfo(){
     try{
-        let giftsData= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts`,headersConfig )
+        let giftsData= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts`)
         this.setState({russianGifts:giftsData.data})
     }
     catch(error){
@@ -109,7 +108,7 @@ else{
         <p className=""><span class="">Author: </span>{book.bookAuthor}</p>
         <p className=""><span class="">Price: </span>${book.bookPrice}</p>
             <ButtonGroup>
-               {/* <Button size="sm" color="primary" tag={Link} to={"//" + employee.id}>Edit</Button>  */}
+            <Button size="sm" color="primary" tag={Link} to={"/add-update-book/" + book.id}>Edit</Button> 
               <Button size="sm" color="danger" onClick={() => this.removeBooks(book.id)}>Delete</Button>
             </ButtonGroup></div>
       });
@@ -126,7 +125,7 @@ checkGifts(){
                              <p className="">Name: {gift.giftName}</p> 
                              <p className=""><span class="">Price: </span>${gift.giftPrice}</p>
                              <ButtonGroup>
-                       <Button size="sm" color="primary" tag={Link} to={"/gifts/" + gift.id}>Edit</Button> 
+                       <Button size="sm" color="primary" tag={Link} to={"/add-update-gifts/" + gift.id}>Edit</Button> 
                       <Button size="sm" color="danger" onClick={() => this.removeGifts(gift.id)}>Delete</Button>
                     </ButtonGroup>
                              </div>)});
@@ -149,7 +148,7 @@ checkRequests(){
                 <p className="">Request date:{request.requestDate}</p>
                 <p className="">Date completed:{request.dateCompleted}</p>
                     <ButtonGroup>
-                       {/* <Button size="sm" color="primary" tag={Link} to={"//" + employee.id}>Edit</Button>  */}
+                    <Button size="sm" color="primary" tag={Link} to={"/add-update-requests/" + request.id}>Edit</Button> 
                       <Button size="sm" color="danger" onClick={() => this.removeRequest(request.id)}>Delete</Button>
                     </ButtonGroup>
                     </div>
@@ -168,7 +167,7 @@ checkSubscription(){
                     <p className="">Full name {subscription.fullName}  </p> 
                     <p className="">Age: {subscription.age}</p>
                         <ButtonGroup>
-                           {/* <Button size="sm" color="primary" tag={Link} to={"/add_edit_gifts/" + employee.id}>Edit</Button>  */}
+                        <Button size="sm" color="primary" tag={Link} to={"/add-update-subscription/" + subscription.id}>Edit</Button> 
                           <Button size="sm" color="danger" onClick={() => this.removeBooks(subscription.id)}>Delete</Button>
                         </ButtonGroup></div>
                   });
@@ -178,6 +177,7 @@ checkSubscription(){
 
   render() {
       return(<div>
+    <Navigation />
       <h1>List of Books</h1>
 {this.checkBooks()}
 <h1>List of Gifts</h1>
@@ -186,24 +186,9 @@ checkSubscription(){
 {this.checkRequests()}
 <h1>List of Subscriptions</h1>
 {this.checkSubscription()}
-          {/* <div className="float-right">
-             <Button color="success" tag={Link} to="/employee/new">Add Group</Button>
-          </div>
-           <h3>My Employees List</h3>
-           <Table className="mt-4">
-             <thead>
-             <tr>
-               <th width="20%">First Name</th>
-               <th width="20%">Last Name</th>/          
-                    <th>Email</th>
-               <th width="10%">Actions</th>
-            </tr>
-            </thead>
-             <tbody>
-            {employeeList}
-             </tbody>
-          </Table>
-        */}
+<Button color="success" tag={Link} to="/add-update-books/new">Add Book</Button>
+<Button color="success" tag={Link} to="/add-update-gifts/new">Add Gift</Button>
+
        </div>
      );
    }
