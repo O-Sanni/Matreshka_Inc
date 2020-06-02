@@ -185,8 +185,11 @@ checkSubscription(){
 
   render() {
       return(<div>
-      {console.log(this.state.russianGifts, this.state.subscribe, this.state.russianBooks, this.state.requests)}
-    <Navigation />
+     <Navigation />
+     
+      <Button color="success" tag={Link} to="/add-update-books/new">Add Book</Button>
+      <Button color="success" tag={Link} to="/add-update-gifts/new">Add Gift</Button>
+ 
       <h1>List of Books</h1>
 {this.checkBooks()}
 <h1>List of Gifts</h1>
@@ -195,8 +198,6 @@ checkSubscription(){
 {this.checkRequests()}
 <h1>List of Subscriptions</h1>
 {this.checkSubscription()}
-<Button color="success" tag={Link} to="/add-update-books/new">Add Book</Button>
-<Button color="success" tag={Link} to="/add-update-gifts/new">Add Gift</Button>
 
        </div>
      );

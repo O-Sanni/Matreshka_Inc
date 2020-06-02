@@ -47,13 +47,13 @@ class BookPage extends React.Component{
                         </Label>
                           <Button  id="input-submit-transl" type="button" onClick={this.submitButton}>Submit</Button>
                           </div>
-                          <div className="translation-div>">
-                          <p>Translation</p>
-                          <Translation />
-                          </div>
                           </div>
                       {this.state.submitButton ? (<BookSearch typeSearch={this.state.typeSearch} />) : ""}
-                      <div className="footer-div">
+                      <div className="translation-div>">
+                          <p className="translation-p-book">Translation</p>
+                          <Translation />
+                          </div>
+                          <div className="footer-div">
                       <Footer />
                     </div>
 </div>

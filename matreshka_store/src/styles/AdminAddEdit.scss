@@ -1,0 +1,94 @@
+@import "ReusableStyles.scss";
+
+//Request Update
+#main-div-request-page{
+    padding-bottom: 250px;
+}
+
+#request-container-update{
+    margin-top: 25px;
+}
+
+#h1-update-request{
+    @include displayH1RequestSubscribe();
+}
+.request-update-display-lable{
+
+    @include displayPSubscribeRequest();
+}
+
+.input-request-class{
+    background-color: rgb(204, 223, 240);
+}
+
+.save-button{
+    margin-right: 25px;
+    @include buttonsStyle();
+}
+.cancel-button{
+
+    @include buttonsStyle();
+}
+
+//Update-Add Books
+
+#main-div-add-update-book{
+    padding-bottom: 250px;
+}
+
+#book-container-update{
+    margin-top: 25px;
+}
+
+.h2-update-add-book{
+    @include displayH1RequestSubscribe();
+}
+.book-update-display-lable{
+
+    @include displayPSubscribeRequest();
+}
+
+.input-book-class{
+    background-color: rgb(204, 223, 240);
+}
+
+.save-button{
+    margin-right: 25px;
+    @include buttonsStyle();
+}
+.cancel-button{
+
+    @include buttonsStyle();
+}
+
+//Gift Add-Update
+
+
+#main-div-add-update-gift{
+    padding-bottom: 250px;
+}
+
+#gift-container-update{
+    margin-top: 25px;
+}
+
+.h2-update-add-gift{
+    @include displayH1RequestSubscribe();
+}
+.gift-update-display-lable{
+
+    @include displayPSubscribeRequest();
+}
+
+.input-gift-class{
+    background-color: rgb(204, 223, 240);
+}
+
+.save-button{
+    margin-right: 25px;
+    @include buttonsStyle();
+}
+.cancel-button{
+
+    @include buttonsStyle();
+}

@@ -77,7 +77,7 @@ render(){
                     
                     <ButtonGroup id="form-subscribe-buttons-divs">
                     <Button className="save-button" color="primary" class="btn btn-primary" type="submit">Save</Button>{' '}
-                    <Button className="cancel-button"class="btn btn-secondary" tag={Link} to="/food_search_info">Cancel</Button>
+                    <Button className="cancel-button"class="btn btn-secondary" tag={Link} to="/">Cancel</Button>
                         </ButtonGroup>
                 </Form>
                 </Container>

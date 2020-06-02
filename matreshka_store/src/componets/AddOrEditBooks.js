@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, withRouter } from 'react-router-dom';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 import Navigation from "./Navigation";
+import "../styles/AdminAddEdit.scss"
 
 class AddOrEditBooks extends Component {
   emptyBook = {
@@ -82,55 +83,55 @@ if(this.state.put===true){
 
   render() {
     const {item} = this.state;
-    const title = <h2>{item.id ? 'Edit books' : 'Add books'}</h2>;
-    return <div>
+    const title = <h2 className="h2-update-add-book">{item.id ? 'Edit books' : 'Add books'}</h2>;
+    return <div id="main-div-add-update-book">
     <Navigation />
-      <Container>
+      <Container id="book-container-update">
         {title}
         <Form onSubmit={this.handleSubmit}>
           <FormGroup>
-            <Label for="bookName">book name</Label>
-            <Input type="text" name="bookName" id="bookName" value={item.bookName || ''}
+            <Label className="book-update-display-lable" for="bookName">Book name</Label>
+            <Input className="input-book-class" type="text" name="bookName" id="bookName" value={item.bookName || ''}
                    onChange={this.handleChange} autoComplete="bookName"/>
           </FormGroup>
           <FormGroup>
-            <Label for="bookName">book name in english</Label>
-            <Input type="text" name="bookEnglishName" id="bookEnglishName" value={item.bookEnglishName || ''}
+            <Label className="book-update-display-lable" for="bookName">Book name in english</Label>
+            <Input className="input-book-class" type="text" name="bookEnglishName" id="bookEnglishName" value={item.bookEnglishName || ''}
                    onChange={this.handleChange} autoComplete="bookEnglishName"/>
           </FormGroup>
           <FormGroup>
-            <Label for="bookName">book author</Label>
-            <Input type="text" name="bookAuthor" id="bookAuthor" value={item.bookAuthor || ''}
+            <Label className="book-update-display-lable" for="bookName">Book author</Label>
+            <Input className="input-book-class" type="text" name="bookAuthor" id="bookAuthor" value={item.bookAuthor || ''}
                    onChange={this.handleChange} autoComplete="bookAuthor"/>
           </FormGroup>
           <FormGroup>
-            <Label for="bookDescription">book description</Label>
-            <textarea type="text" name="bookDescription" id="bookDescription" value={item.bookDescription || ''}
+            <Label className="book-update-display-lable" for="bookDescription">Book description</Label>
+            <Input className="input-book-class" type="text" name="bookDescription" id="bookDescription" value={item.bookDescription || ''}
                    onChange={this.handleChange} autoComplete="bookDescription"/>
           </FormGroup>
           <FormGroup>
-            <Label for="bookCategory">book category</Label>
-            <Input type="text" name="bookCategory" id="bookCategory" value={item.bookCategory || ''}
+            <Label className="book-update-display-lable" for="bookCategory">Book category</Label>
+            <Input className="input-book-class" type="text" name="bookCategory" id="bookCategory" value={item.bookCategory || ''}
                    onChange={this.handleChange} autoComplete="bookCategory"/>
           </FormGroup>
           <FormGroup>
-            <Label for="bookPrice">book price</Label>
-            <Input type="text" name="bookPrice" id="bookPrice" value={item.bookPrice || ''}
+            <Label className="book-update-display-lable" for="bookPrice">Book price</Label>
+            <Input className="input-book-class" type="text" name="bookPrice" id="bookPrice" value={item.bookPrice || ''}
                    onChange={this.handleChange} autoComplete="bookPrice"/>
           </FormGroup>
           <FormGroup>
-            <Label for="bookWebsite">book website</Label>
-            <Input type="text" name="bookWebsite" id="bookWebsite" value={item.bookWebsite || ''}
+            <Label className="book-update-display-lable" for="bookWebsite">Book website</Label>
+            <Input className="input-book-class" type="text" name="bookWebsite" id="bookWebsite" value={item.bookWebsite || ''}
                    onChange={this.handleChange} autoComplete="bookWebsite"/>
           </FormGroup>
           <FormGroup>
-            <Label for="bookPicture">book picturee</Label>
-            <Input type="text" name="bookPicture" id="bookPicture" value={item.bookPicture || ''}
+            <Label className="book-update-display-lable" for="bookPicture">Book picture</Label>
+            <Input className="input-book-class" type="text" name="bookPicture" id="bookPicture" value={item.bookPicture || ''}
                    onChange={this.handleChange} autoComplete="bookPicture"/>
           </FormGroup>
           <FormGroup>
-            <Button color="primary" type="submit">Save</Button>{' '}
-            <Button color="secondary" tag={Link} to="/admin">Cancel</Button>
+            <Button className="save-button" color="primary" type="submit">Save</Button>{' '}
+            <Button className="cancel-button" color="secondary" tag={Link} to="/admin">Cancel</Button>
           </FormGroup>
          
         </Form>
