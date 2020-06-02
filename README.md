@@ -24,6 +24,6 @@
 
 ## Website
 
-![Matreshka Inc.](https://matreshka-store.herokuapp.com/)
+[Matreshka Inc.](https://matreshka-store.herokuapp.com/)
 
 ### In order to get to admin's page please followthis link: https://matreshka-store.herokuapp.com/admin or add /admin if you using localhost
