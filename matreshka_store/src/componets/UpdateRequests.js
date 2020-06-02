@@ -55,8 +55,7 @@ try {
   async handleSubmit(event) {
     event.preventDefault();
 
-  axios.put(`/book_store/v1/requests/${this.state.id}`, this.state.item)
-//   https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/${this.state.id}
+  axios.put(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/${this.state.id}`, this.state.item)
   .then(function (response) {
     console.log(response);
   })

@@ -61,8 +61,7 @@ handleRequestDate(event){
 
 submitButtonHandler(event){
     event.preventDefault();
-    axios.post('/book_store/v1/requests', {
-        // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/requests
+    axios.post('https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/requests', {
         requesterName: this.state.requesterName,
         requesterEmail:this.state.requesterEmail,
         requesterPhoneNumber:this.state.requesterPhoneNumber,

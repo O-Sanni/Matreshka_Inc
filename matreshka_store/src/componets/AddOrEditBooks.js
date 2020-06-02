@@ -36,8 +36,7 @@ class AddOrEditBooks extends Component {
   }
 async getBookInfo(){
 try {
- const book= await axios.get(`/book_store/v1/books/${this.state.id}`)
-//  https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/${this.state.id}
+ const book= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/${this.state.id}`)
   this.setState({item:book.data});}
   catch(error){console.log(error)};
   this.setState({put:true})
@@ -57,8 +56,7 @@ try {
     event.preventDefault();
 
 if(this.state.put===true){
-  axios.put(`/book_store/v1/books/${this.state.id}`, this.state.item)
-//   https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/${this.state.id}
+  axios.put(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/${this.state.id}`, this.state.item)
   .then(function (response) {
     console.log(response);
   })
@@ -68,8 +66,7 @@ if(this.state.put===true){
     }
 
   else{
-      axios.post('/book_store/v1/books/', this.state.item)
-    //   https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/
+      axios.post('https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/', this.state.item)
       .then(function (response) {
         console.log(response);
       })

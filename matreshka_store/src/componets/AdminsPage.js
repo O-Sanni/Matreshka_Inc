@@ -26,8 +26,7 @@ this.getSubscribe();
 
   async getGiftsInfo(){
     try{
-        let giftsData= await axios.get(`/book_store/v1/gifts`)
-        // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts
+        let giftsData= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts`)
         this.setState({russianGifts:giftsData.data})
     }
     catch(error){
@@ -36,8 +35,7 @@ this.getSubscribe();
 }
 async getBooksInfo(){
     try{
-        let booksData= await axios.get(`/book_store/v1/books`)
-        // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books
+        let booksData= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books`)
         this.setState({russianBooks:booksData.data})
     }
     catch(error){
@@ -46,8 +44,7 @@ async getBooksInfo(){
 }
 async getSubscribe(){
     try{
-        let subscribeData= await axios.get(`/book_store/v1/subscribe`)
-        // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/subscribe
+        let subscribeData= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/subscribe`)
         this.setState({subscribe:subscribeData.data})
     }
     catch(error){
@@ -56,8 +53,7 @@ async getSubscribe(){
 }
 async getRequests(){
     try{
-        let requestsData= await axios.get(`/book_store/v1/requests`)
-        // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/requests
+        let requestsData= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/requests`)
         this.setState({requests:requestsData.data})
     }
     catch(error){
@@ -66,8 +62,7 @@ async getRequests(){
 }
 
 async removeSubscription(id) {
-    axios.delete(`/book_store/v1/subscribe/${id}`)
-    // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/subscribe/${id}
+    axios.delete(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/subscribe/${id}`)
       .then(function (response) {
         console.log(response);
       })
@@ -77,8 +72,7 @@ async removeSubscription(id) {
   }
 
   async removeBooks(id) {
-    axios.delete(`/book_store/v1/books/${id}`)
-    // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/${id}
+    axios.delete(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/${id}`)
     .then(function (response) {
       console.log(response);
     })
@@ -87,8 +81,7 @@ async removeSubscription(id) {
     });
   }
   async removeGifts(id) {
-    axios.delete(`/book_store/v1/gifts/${id}`)
-    // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/${id}
+    axios.delete(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/${id}`)
     .then(function (response) {
       console.log(response);
     })
@@ -97,8 +90,7 @@ async removeSubscription(id) {
     });
 }
   async removeRequest(id) {
-    axios.delete(`book_store/v1/requests/${id}`)
-    // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/requests/${id}
+    axios.delete(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/requests/${id}`)
     .then(function (response) {
       console.log(response);
     })
