@@ -20,7 +20,7 @@
 
 ##  My database
 
-    [Matreshka Inc. Database](https://matreshka-store.herokuapp.com/)
+[Matreshka Inc. Database](https://matreshka-store.herokuapp.com/)
 
 ## Technologies
     1.  React
