@@ -111,7 +111,7 @@ checkBooks(){
 if(this.state.russianBooks===undefined){}
 else{
     const russianBooksList = this.state.russianBooks.map(book => {
-        return <div>
+        return <div className="info-divs-return">
         <p className="" >Book ID: #{book.id}</p>
         <p className="">Title: {book.bookName} ({book.bookEnglishName}) </p> 
         <p className=""><span class="">Author: </span>{book.bookAuthor}</p>
@@ -129,7 +129,7 @@ checkGifts(){
             else{
                 const gifts=this.state.russianGifts.map(gift=> {
                     return (
-                        <div className="">
+                        <div className="info-divs-return">
                              <p className="" >Gift ID: #{gift.id}</p>
                              <p className="">Name: {gift.giftName}</p> 
                              <p className=""><span class="">Price: </span>${gift.giftPrice}</p>
@@ -147,7 +147,7 @@ checkRequests(){
         if(this.state.requests===undefined){}
         else{
             const requestsList = this.state.requests.map(request => {
-                return <div>
+                return <div className="info-divs-return">
                 <p className="">Request ID: #{request.id} </p> 
                 <p className="">Requester's name: {request.requesterName} </p> 
                 <p className="">Requester's email:{request.requesterEmail}</p>
@@ -170,7 +170,7 @@ checkSubscription(){
             if(this.state.subscribe===undefined){}
             else{
                 const subscriptions = this.state.subscribe.map(subscription => {
-                    return <div>
+                    return <div className="info-divs-return">
                      <p className="" >Subscription ID: #{subscription.id}</p>
                     <p className="">Email: {subscription.email}  </p> 
                     <p className="">Full name {subscription.fullName}  </p> 
@@ -186,18 +186,21 @@ checkSubscription(){
   render() {
       return(<div>
      <Navigation />
-     
-      <Button color="success" tag={Link} to="/add-update-books/new">Add Book</Button>
-      <Button color="success" tag={Link} to="/add-update-gifts/new">Add Gift</Button>
- 
-      <h1>List of Books</h1>
-{this.checkBooks()}
-<h1>List of Gifts</h1>
-{this.checkGifts()}
-<h1>List of Requests</h1>
-{this.checkRequests()}
-<h1>List of Subscriptions</h1>
-{this.checkSubscription()}
+     <div id="buttons-admin-add">
+      <Button className="add-buttons" tag={Link} to="/add-update-books/new">Add Book</Button>
+      <Button className="add-buttons" tag={Link} to="/add-update-gifts/new">Add Gift</Button>
+ </div>
+      <h1 className="h1-admin-page">List of Books</h1>
+<div className="info-divs">
+{this.checkBooks()}</div>
+<h1 className="h1-admin-page">List of Gifts</h1>
+<div className="info-divs">
+{this.checkGifts()}</div>
+<h1 className="h1-admin-page">List of Requests</h1>
+<div className="info-divs">{this.checkRequests()}</div>
+<h1 className="h1-admin-page">List of Subscriptions</h1>
+<div className="info-divs">
+{this.checkSubscription()}</div>
 
        </div>
      );
