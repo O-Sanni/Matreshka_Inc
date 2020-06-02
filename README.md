@@ -13,6 +13,11 @@
     3.  https://www.pngwave.com/
     4.  Class examples
 
+##  3rd Party API
+
+    1.  https://tech.yandex.com/translate/doc/dg/reference/translate-docpage/#JSON
+    2.  https://api.nytimes.com/svc/books/
+
 ## Technologies
     1.  React
     2.  Java
