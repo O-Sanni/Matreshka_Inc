@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Badge} from 'reactstrap';
+import "../styles/NYTimesPage.scss"
 
 
 
@@ -39,16 +40,18 @@ checkIfExist(){
     else{
         console.log(this.state.bookList)
         let books=this.state.bookList.map(res=> {
-            let buyLinks=res.buy_links.map(res=>{return <div><Badge href={res.url} color={Math.random()}>Buy from {res.name}<br/></Badge></div>
+            let buyLinks=res.buy_links.map(res=>{return <div><a className="a-buy-option" href={res.url}>{res.name}</a></div>
              })
             return (
-                <div className="">
-                     <h2 className="">Title: {res.title} <Badge color="success">Rank #{res.rank}</Badge> </h2> 
-                     <p className=""><span class="">Author: </span>{res.author}</p>
-                    <p className=""><span class="">Publisher: </span>{res.publisher}</p>
-                     <p className=""><span class="">Description: </span>{res.description}</p>
-                    <img className="" src={res.book_image} alt="book image" />
-                    <div>{buyLinks}</div>
+                <div className="books-div-list">
+                     <p className="title-books"><span className="span-books">Title:</span> {res.title} <Badge color="success">Rank #{res.rank}</Badge> </p> 
+                     <p className="p-books"><span className="span-books">Author: </span>{res.author}</p>
+                    <p className="p-books"><span className="span-books">Publisher: </span>{res.publisher}</p>
+                     <p className="p-books"><span className="span-books">Description: </span>{res.description}</p>
+                     <p className="span-books"class="span-books">Buy at: </p>
+                    {buyLinks}
+                    <img className="img-books" src={res.book_image} alt="book image" />
+                    
                     </div>
 
         )})
@@ -59,9 +62,9 @@ checkIfExist(){
 
 render(){
     return(
-       <Container>
+       <div id="books-list">
             {this.checkIfExist()}   
-       </Container>
+       </div>
     )
 }
 }

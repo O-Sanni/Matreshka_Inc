@@ -32,9 +32,8 @@ class BookPage extends React.Component{
   
      render(){
           return (
-                  <div id="main-div-transl-page">
+                  <div id="main-div-book-page">
                   <Navigation />
-                  <div id="translate-option-div">
                     <div id="choice-div">
                         <Label for="options-book" id="select-lable"> 
                          Please choose type of book:
@@ -47,12 +46,7 @@ class BookPage extends React.Component{
                         </Label>
                           <Button  id="input-submit-transl" type="button" onClick={this.submitButton}>Submit</Button>
                           </div>
-                          </div>
                       {this.state.submitButton ? (<BookSearch typeSearch={this.state.typeSearch} />) : ""}
-                      <div className="translation-div>">
-                          <p className="translation-p-book">Translation</p>
-                          <Translation />
-                          </div>
                           <div className="footer-div">
                       <Footer />
                     </div>

@@ -1,28 +1,49 @@
 @import "ReusableStyles";
 
+
 .footer-div{
     @include footer_div();
-    }
+}
 
 #choice-div{
     margin-left: 25px;
 }
 
-#translate-option-div{
+#main-div-book-page{
+    padding-bottom: 250px;
+}
+#books-list{
     margin-top: 25px;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+@include gridSearchOutput();
+text-align: center;
 }
 
-.translation-div{
-display: flex;
-flex-direction: row;
+.books-div-list{
+    border: outset 2px $border_color;
+    margin: 5px;
 }
-#translation-p-book{
-    margin-left: 15px;
-     margin-top: 15px;
-     color:rgb(39, 7, 91);
-     font-family:$oranienbaum;
-     font-size: 35px;
- }
+
+.p-books{
+@include paragraphsGiftsAndBooks();
+}
+
+.title-books{
+    @include paragraphsGiftsAndBooks();
+}
+
+.span-books{
+    @include titlesBooksAndGiftsAndSpans();
+}
+
+.img-books{
+width: 250px;
+height: auto;
+}
+
+.a-buy-option{
+    @include paragraphsGiftsAndBooks();
+}
+.a-buy-option:hover{
+    text-decoration: none;
+    color: rgb(201, 83, 225);
+}

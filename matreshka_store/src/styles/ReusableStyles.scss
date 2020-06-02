@@ -43,6 +43,14 @@ max-width:100%;
     font-family:$pattaya;
     font-size: 27px;
 }
+@mixin titlesBooksAndSpans{
+    margin-top: 15px;
+    color:rgb(39, 7, 91);
+    font-family:$viaoda;
+    font-size: 27px;
+}
+
+
 
 //Colors
 $footer_nav_txt_color: rgb(11, 3, 91);
