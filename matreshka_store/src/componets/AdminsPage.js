@@ -112,13 +112,13 @@ if(this.state.russianBooks===undefined){}
 else{
     const russianBooksList = this.state.russianBooks.map(book => {
         return <div className="info-divs-return">
-        <p className="" >Book ID: #{book.id}</p>
-        <p className="">Title: {book.bookName} ({book.bookEnglishName}) </p> 
-        <p className=""><span class="">Author: </span>{book.bookAuthor}</p>
-        <p className=""><span class="">Price: </span>${book.bookPrice}</p>
+        <p className="admin-page-p" >Book ID: #{book.id}</p>
+        <p className="admin-page-p">Title: {book.bookName} ({book.bookEnglishName}) </p> 
+        <p className="admin-page-p">Author: {book.bookAuthor}</p>
+        <p className="admin-page-p">Price: ${book.bookPrice}</p>
             <ButtonGroup>
-            <Button size="sm" color="primary" tag={Link} to={"/add-update-books/" + book.id}>Edit</Button> 
-              <Button size="sm" color="danger" onClick={() => this.removeBooks(book.id)}>Delete</Button>
+            <Button className="admin-buttons-class" size="sm" color="primary" tag={Link} to={"/add-update-books/" + book.id}>Edit</Button> 
+              <Button className="admin-buttons-class" size="sm" color="danger" onClick={() => this.removeBooks(book.id)}>Delete</Button>
             </ButtonGroup></div>
       });
       return russianBooksList;
@@ -130,12 +130,12 @@ checkGifts(){
                 const gifts=this.state.russianGifts.map(gift=> {
                     return (
                         <div className="info-divs-return">
-                             <p className="" >Gift ID: #{gift.id}</p>
-                             <p className="">Name: {gift.giftName}</p> 
-                             <p className=""><span class="">Price: </span>${gift.giftPrice}</p>
+                             <p className="admin-page-p" >Gift ID: #{gift.id}</p>
+                             <p className="admin-page-p">Name: {gift.giftName}</p> 
+                             <p className="admin-page-p">Price: ${gift.giftPrice}</p>
                              <ButtonGroup>
-                       <Button size="sm" color="primary" tag={Link} to={"/add-update-gifts/" + gift.id}>Edit</Button> 
-                      <Button size="sm" color="danger" onClick={() => this.removeGifts(gift.id)}>Delete</Button>
+                       <Button className="admin-buttons-class" size="sm" color="primary" tag={Link} to={"/add-update-gifts/" + gift.id}>Edit</Button> 
+                      <Button className="admin-buttons-class" size="sm" color="danger" onClick={() => this.removeGifts(gift.id)}>Delete</Button>
                     </ButtonGroup>
                              </div>)});
           return gifts;
@@ -148,17 +148,17 @@ checkRequests(){
         else{
             const requestsList = this.state.requests.map(request => {
                 return <div className="info-divs-return">
-                <p className="">Request ID: #{request.id} </p> 
-                <p className="">Requester's name: {request.requesterName} </p> 
-                <p className="">Requester's email:{request.requesterEmail}</p>
-                <p className="">Requester's phone number:{request.requesterPhoneNumber}</p>
-                <p className="">Name of item:{request.itemName}</p>
-                <p className="">Name of item in English:{request.englishItemName}</p>
-                <p className="">Request date:{request.requestDate}</p>
-                <p className="">Date completed:{request.dateCompleted}</p>
+                <p className="admin-page-p">Request ID: #{request.id} </p> 
+                <p className="admin-page-p">Requester's name: {request.requesterName} </p> 
+                <p className="admin-page-p">Requester's email:{request.requesterEmail}</p>
+                <p className="admin-page-p">Requester's phone number:{request.requesterPhoneNumber}</p>
+                <p className="admin-page-p">Name of item:{request.itemName}</p>
+                <p className="admin-page-p">Name of item in English:{request.englishItemName}</p>
+                <p className="admin-page-p">Request date:{request.requestDate}</p>
+                <p className="admin-page-p">Date completed:{request.dateCompleted}</p>
                     <ButtonGroup>
-                    <Button size="sm" color="primary" tag={Link} to={"/update-requests/" + request.id}>Edit</Button> 
-                      <Button size="sm" color="danger" onClick={() => this.removeRequest(request.id)}>Delete</Button>
+                    <Button className="admin-buttons-class" size="sm" color="primary" tag={Link} to={"/update-requests/" + request.id}>Edit</Button> 
+                      <Button className="admin-buttons-class" size="sm" color="danger" onClick={() => this.removeRequest(request.id)}>Delete</Button>
                     </ButtonGroup>
                     </div>
               });
@@ -171,12 +171,12 @@ checkSubscription(){
             else{
                 const subscriptions = this.state.subscribe.map(subscription => {
                     return <div className="info-divs-return">
-                     <p className="" >Subscription ID: #{subscription.id}</p>
-                    <p className="">Email: {subscription.email}  </p> 
-                    <p className="">Full name {subscription.fullName}  </p> 
-                    <p className="">Age: {subscription.age}</p>
+                     <p className="admin-page-p" >Subscription ID: #{subscription.id}</p>
+                    <p className="admin-page-p">Email: {subscription.email}  </p> 
+                    <p className="admin-page-p">Full name {subscription.fullName}  </p> 
+                    <p className="admin-page-p">Age: {subscription.age}</p>
                         <ButtonGroup>
-                          <Button size="sm" color="danger" onClick={() => this.removeBooks(subscription.id)}>Delete</Button>
+                          <Button className="admin-buttons-class" size="sm" color="danger" onClick={() => this.removeBooks(subscription.id)}>Delete</Button>
                         </ButtonGroup></div>
                   });
                   return subscriptions;

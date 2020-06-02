@@ -26,6 +26,17 @@ border: outset 2px $border_color;
 text-align: center;
 }
 
+.admin-page-p{
+    color:rgb(39, 7, 91);
+    font-family:$pt_serif;
+    font-size: 23px;
+}
+
+.admin-buttons-class{
+    margin-right: 15px;
+    margin-bottom: 25px;
+}
+
 //Request Update
 #main-div-request-page{
     padding-bottom: 250px;
