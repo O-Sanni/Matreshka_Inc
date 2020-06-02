@@ -3,3 +3,19 @@
 .footer-div{
     @include footer_div();
     }
+
+#choice-div{
+    margin-left: 25px;
+}
+
+#translate-option-div{
+    margin-top: 25px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.translation-div{
+display: flex;
+flex-direction: row;
+}

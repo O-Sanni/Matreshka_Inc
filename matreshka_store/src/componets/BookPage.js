@@ -34,19 +34,24 @@ class BookPage extends React.Component{
           return (
                   <div id="main-div-transl-page">
                   <Navigation />
-                    <FormGroup id="translate-box">
-                        <Label for="options-language" id="select-lable"> 
+                  <div id="translate-option-div">
+                    <div id="choice-div">
+                        <Label for="options-book" id="select-lable"> 
                          Please choose type of book:
-                          <Input type="select"  id="select-transl" value={this.state.value} onChange={this.handleChoice}>
+                          <Input type="select"  id="select-book" value={this.state.value} onChange={this.handleChoice}>
                             <option className="options-search-class" value="hardcover-fiction">Hardcover Fiction</option>
                             <option className="options-searchclass" value="paperback-nonfiction">Paperback Nonfiction</option>
                             <option className="options-search-class" value="e-book-fiction">E-book Fiction</option>
                             <option className="options-search-class" value="e-book-nonfiction">E-book Nonfiction</option>
                           </Input>
                         </Label>
-                        </FormGroup>
                           <Button  id="input-submit-transl" type="button" onClick={this.submitButton}>Submit</Button>
+                          </div>
+                          <div className="translation-div>">
+                          <p>Translation</p>
                           <Translation />
+                          </div>
+                          </div>
                       {this.state.submitButton ? (<BookSearch typeSearch={this.state.typeSearch} />) : ""}
                       <div className="footer-div">
                       <Footer />

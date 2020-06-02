@@ -2,8 +2,9 @@ import React from "react";
 import { Link} from "react-router-dom";
 import axios from "axios";
 import { Button, Container, Form, FormGroup, Input,ButtonGroup }  from 'reactstrap';
-import Naigation from "./Navigation";
 import Navigation from "./Navigation";
+import Footer from "./Footer";
+
 
 class Subscribe extends React.Component{
 
