@@ -3,6 +3,7 @@ import axios from "axios";
 import Navigation from "./Navigation";
 import Translation from "./TranslationComponent";
 import Footer from "./Footer";
+import "../styles/RussianBooksGiftsTranslation.scss"
 
 class RussianBooks extends React.Component{
     constructor(props){
@@ -31,14 +32,14 @@ class RussianBooks extends React.Component{
             else{
                 let books=this.state.russianBookList.map(res=> {
                     return (
-                        <div className="">
-                             <h2 className="">Title: {res.bookName} ({res.bookEnglishName}) </h2> 
-                             <p className=""><span class="">Author: </span>{res.bookAuthor}</p>
-                             <p className=""><span class="">Description: </span>{res.bookDescription}</p>
-                             <p className=""><span class="">Category: </span>{res.bookCategory}</p>
-                             <p className=""><span class="">Price: </span>${res.bookPrice}</p>
-                             <p className=""><span class="">Buy at: </span><a href={res.bookWebsite}>Direct website</a></p>
-                            <img className="" src={res.bookPicture} alt="book image" />
+                        <div className="russian-books-div-list">
+                             <h3 className="title-russian-books">Title: {res.bookName} ({res.bookEnglishName}) </h3> 
+                             <p className="p-russian-books"><span class="span-russian-books">Author: </span>{res.bookAuthor}</p>
+                             <p className="p-russian-books"><span class="span-russian-books">Description: </span>{res.bookDescription}</p>
+                             <p className="p-russian-books"><span class="span-russian-books">Category: </span>{res.bookCategory}</p>
+                             <p className="p-russian-books"><span class="span-russian-books">Price: </span>${res.bookPrice}</p>
+                             <p className="p-russian-books"><span class="span-russian-books">Buy at: </span><a className="a-buy-option" href={res.bookWebsite}>Direct website</a></p>
+                            <img className="img-russian-books" src={res.bookPicture} alt="book image" />
                             </div>
                 )})
                 return books;
@@ -48,13 +49,21 @@ class RussianBooks extends React.Component{
         
         render(){
             return(
-               <div>
+               <div id="main-div-russian-book">
                <Navigation />
-               <Translation />
-                    {this.checkIfExist()} 
+               <div id="second-div-russian-books">
+               <h1 id="russian-books-h1">Russian Books</h1>
+               <div id="russian-books-list">
+                    {this.checkIfExist()}
+                </div>
+                <div className="russian-pages-translations-div">
+                <p className="p-translation">Translation</p>
+                     <Translation />
+                     </div>
+                     </div> 
                     <div className="footer-div">
                       <Footer />
-                    </div>  
+                    </div> 
                </div>
             )
         }

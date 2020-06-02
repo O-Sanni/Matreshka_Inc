@@ -59,30 +59,28 @@ render(){
     return(
         <div id="main-div-subscribe-page">
         <Navigation />
-            <div id="subscribe-page-form-div">
-            <Container>
-            <p id="p-subscribe">Please subscribe to receive our daily updates</p>
+            <Container id="subscribe-page-form-container">
+            <h1 id="h1-subscribe">Please subscribe to receive our daily updates</h1>
                 <Form onSubmit={this.submitButtonHandler}>
                         <FormGroup className="form-subscribe-mini-divs">
                             <p className="subscribe-display-p">Enter your email</p>
-                            <Input   type="text" name="email" id="input-subscribe-email" value={this.state.email} onChange={this.handleEmail} placeholder="Enter your email"/>
+                            <Input className="input-request-class"  type="text" name="email" id="input-subscribe-email" value={this.state.email} onChange={this.handleEmail} placeholder="Enter your email"/>
                         </FormGroup>
                         <FormGroup className="form-subscribe-mini-divs">
                             <p className="subscribe-display-p">Enter your full name</p>
-                            <Input   type="text" name="fullName" id="input-subscribe-email" value={this.state.fullName} onChange={this.handleFullName} placeholder="Enter your full name"/>
+                            <Input className="input-request-class"  type="text" name="fullName" id="input-subscribe-email" value={this.state.fullName} onChange={this.handleFullName} placeholder="Enter your full name"/>
                         </FormGroup>
                         <FormGroup className="form-subscribe-mini-divs">
                             <p className="subscribe-display-p">Indicate your age</p>
-                            <Input   type="text" name="preferences" id="input-subscribe-preferences" value={this.state.age} onChange={this.handleAge} placeholder="Enter your age"/>
+                            <Input  className="input-request-class" type="text" name="preferences" id="input-subscribe-preferences" value={this.state.age} onChange={this.handleAge} placeholder="Enter your age"/>
                         </FormGroup>
                     
                     <ButtonGroup id="form-subscribe-buttons-divs">
-                    <Button id="save-button-subscribe" color="primary" class="btn btn-primary" type="submit">Save</Button>{' '}
-                    <Button id="cancel-button-subscribe"class="btn btn-secondary" tag={Link} to="/food_search_info">Cancel</Button>
+                    <Button className="save-button" color="primary" class="btn btn-primary" type="submit">Save</Button>{' '}
+                    <Button className="cancel-button"class="btn btn-secondary" tag={Link} to="/food_search_info">Cancel</Button>
                         </ButtonGroup>
                 </Form>
                 </Container>
-            </div>
             <div className="footer-div">
                       <Footer />
                     </div>  

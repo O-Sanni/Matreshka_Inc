@@ -4,6 +4,7 @@ import axios from "axios";
 import { Button, Container, Form, FormGroup, Input, ButtonGroup }  from 'reactstrap';
 import Navigation from "./Navigation";
 import Footer from "./Footer";
+import "../styles/RequestsAndSubscribe.scss"
 
 
 class Requests extends React.Component{
@@ -84,36 +85,36 @@ render(){
     return(
         <div id="main-div-request-page">
         <Navigation />
-        <Container>
-         <p>Did not find something, please let us know, and we will do our best to find this item</p>
+        <Container id="requests-container">
+         <h1 id="h1-request">Did not find something, please let us know, and we will do our best to find this item</h1>
          <Form onSubmit={this.submitButtonHandler}>
                         <FormGroup className="form-request-mini-divs">
                             <p className="request-display-p">Enter your name</p>
-                            <Input   type="text" name="requesterName" id="input-request" value={this.state.requesterName} onChange={this.handleRequesterName} placeholder="Enter your name"/>
+                            <Input  className="input-request-class" type="text" name="requesterName" id="input-request" value={this.state.requesterName} onChange={this.handleRequesterName} placeholder="Enter your name"/>
                         </FormGroup>
                         <FormGroup className="form-request-mini-divs">
                             <p className="request-display-p">Enter your email</p>
-                            <Input   type="text" name="requesterEmail" id="input-request" value={this.state.requesterEmail} onChange={this.handleRequesterEmail} placeholder="Enter your email"/>
+                            <Input  className="input-request-class" type="text" name="requesterEmail" id="input-request" value={this.state.requesterEmail} onChange={this.handleRequesterEmail} placeholder="Enter your email"/>
                         </FormGroup>
                         <FormGroup className="form-request-mini-divs">
                             <p className="request-display-p">Enter your phone number</p>
-                            <Input   type="text" name="requesterPhoneNumber" id="input-request" value={this.state.requesterPhoneNumber} onChange={this.handleRequesterPhoneNumber} placeholder="Enter your phone number"/>
+                            <Input className="input-request-class"  type="text" name="requesterPhoneNumber" id="input-request" value={this.state.requesterPhoneNumber} onChange={this.handleRequesterPhoneNumber} placeholder="Enter your phone number"/>
                         </FormGroup>
                         <FormGroup className="form-request-mini-divs">
                             <p className="request-display-p">Enter the item name in Russian,if any</p>
-                            <Input   type="text" name="itemName" id="input-request" value={this.state.itemName} onChange={this.handleItemName} placeholder="Enter item name in Russian"/>
+                            <Input className="input-request-class"  type="text" name="itemName" id="input-request" value={this.state.itemName} onChange={this.handleItemName} placeholder="Enter item name in Russian"/>
                         </FormGroup>
                         <FormGroup className="form-request-mini-divs">
                             <p className="request-display-p">Enter item name in English</p>
-                            <Input   type="text" name="englishItemName" id="input-request" value={this.state.englishItemName} onChange={this.handleEnglishItemName} placeholder="Enter item name in English"/>
+                            <Input className="input-request-class"  type="text" name="englishItemName" id="input-request" value={this.state.englishItemName} onChange={this.handleEnglishItemName} placeholder="Enter item name in English"/>
                         </FormGroup>
                         <FormGroup className="form-request-mini-divs">
                             <p className="request-display-p">Enter request date</p>
-                            <Input   type="text" name="requestDate" id="input-request" value={this.state.requestDate} onChange={this.handleRequestDate} placeholder="Enter request date"/>
+                            <Input className="input-request-class"  type="text" name="requestDate" id="input-request" value={this.state.requestDate} onChange={this.handleRequestDate} placeholder="Enter request date"/>
                         </FormGroup>
                     <ButtonGroup id="form-request-buttons-divs">
-                    <Button id="save-button-request" color="primary" class="btn btn-primary" type="submit">Save</Button>
-                    <Button id="cancel-button-request" class="btn btn-secondary" tag={Link} to="/">Cancel</Button>
+                    <Button className="save-button" color="primary" class="btn btn-primary" type="submit">Save</Button>
+                    <Button className="cancel-button" class="btn btn-secondary" tag={Link} to="/">Cancel</Button>
                         </ButtonGroup>
                 </Form>
                 </Container>

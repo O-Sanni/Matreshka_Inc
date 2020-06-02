@@ -1,0 +1,47 @@
+@import "ReusableStyles.scss";
+
+#main-div-request-page{
+    padding-bottom: 250px;
+}
+
+#requests-container{
+    margin-top: 25px;
+}
+
+#h1-request{
+    @include displayH1RequestSubscribe();
+}
+.request-display-p{
+
+    @include displayPSubscribeRequest();
+}
+
+.input-request-class{
+    background-color: rgb(204, 223, 240);
+}
+
+.save-button{
+    margin-right: 25px;
+    @include buttonsStyle();
+}
+.cancel-button{
+
+    @include buttonsStyle();
+}
+//Subscribe
+
+#main-div-subscribe-page{
+    padding-bottom: 250px;
+}
+
+#subscribe-page-form-container{
+    margin-top: 25px;  
+}
+
+#h1-subscribe{
+    @include displayH1RequestSubscribe();
+}
+
+.subscribe-display-p{
+   @include displayPSubscribeRequest();
+}

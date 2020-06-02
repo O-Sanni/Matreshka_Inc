@@ -1,6 +1,7 @@
 import React from "react";
 import TranslationSearch from "./TranslationSearch";
 import { Button, Input, FormGroup, Label, ButtonGroup, InputGroup, Container} from 'reactstrap';
+import "../styles/RussianBooksGiftsTranslation.scss"
 
 const initialState=""; //constant value to use within the code
 

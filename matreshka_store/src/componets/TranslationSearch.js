@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import "../styles/NYTimesPage.scss"
+import "../styles/RussianBooksGiftsTranslation.scss"
 
  let translation="";
 
@@ -15,7 +15,7 @@ function TranslationSearch(props){
             console.log(error);
         })
 
-        return <div>{translation}</div>
+        return <div id="translation-result">{translation}</div>
     }
 
 export default TranslationSearch;
