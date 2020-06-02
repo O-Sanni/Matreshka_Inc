@@ -55,7 +55,8 @@ try {
     event.preventDefault();
 
 if(this.state.put===true){
-  axios.put(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/${this.state.id}`, this.state.item)
+  axios.put(`/book_store/v1/gifts/${this.state.id}`, this.state.item)
+  // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/${this.state.id}
   .then(function (response) {
     console.log(response);
   })
@@ -65,7 +66,8 @@ if(this.state.put===true){
     }
 
   else{
-      axios.post(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/`, this.state.item)
+      axios.post(`/book_store/v1/gifts/`, this.state.item)
+      // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/
       .then(function (response) {
         console.log(response);
       })

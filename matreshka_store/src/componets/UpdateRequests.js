@@ -5,7 +5,7 @@ import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 import Navigation from "./Navigation";
 import "../styles/AdminAddEdit.scss"
 
-class AddOrEditbooks extends Component {
+class UpdateRequests extends Component {
   
   requests = {
     requesterName: "",
@@ -54,8 +54,9 @@ try {
 
   async handleSubmit(event) {
     event.preventDefault();
-
-  axios.put(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/${this.state.id}`, this.state.item)
+  
+  axios.put(`/book_store/v1/requests/${this.state.id}`, this.state.item)
+  // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/requests/${this.state.id}
   .then(function (response) {
     console.log(response);
   })
@@ -117,4 +118,4 @@ try {
   }
 }
 
-export default withRouter(AddOrEditbooks);
+export default withRouter(UpdateRequests);
