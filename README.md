@@ -1,5 +1,5 @@
 # Wireframe
-![Image](https://github.com/OlgaSannikov/book_store/blob/master/book-store/src/assets/BookStoreWireframe.png)
+![Image](https://github.com/OlgaSannikov/Matreshka_Inc/blob/master/matreshka_store/src/assets/BookStoreWireframe.png)
 
 ## Users and Problem Statement
 
