@@ -4,6 +4,7 @@ import { Button, Input, FormGroup, Label, Container} from 'reactstrap';
 import Navigation from "./Navigation";
 import Translation from "./TranslationComponent";
 import Footer from "./Footer";
+import "../styles/NYTimesPage.scss"
 
 
 class BookPage extends React.Component{
@@ -31,7 +32,7 @@ class BookPage extends React.Component{
   
      render(){
           return (
-                  <Container id="main-div-transl-page">
+                  <div id="main-div-transl-page">
                   <Navigation />
                     <FormGroup id="translate-box">
                         <Label for="options-language" id="select-lable"> 
@@ -47,9 +48,10 @@ class BookPage extends React.Component{
                           <Button  id="input-submit-transl" type="button" onClick={this.submitButton}>Submit</Button>
                           <Translation />
                       {this.state.submitButton ? (<BookSearch typeSearch={this.state.typeSearch} />) : ""}
+                      <div className="footer-div">
                       <Footer />
-                    </Container>
-
+                    </div>
+</div>
           )}
 }
 

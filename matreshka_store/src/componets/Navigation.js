@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Nav, NavItem}  from 'reactstrap';
-
+import "../styles/NaviagtionAndFooter.scss"
 
 
 function Navigation(){

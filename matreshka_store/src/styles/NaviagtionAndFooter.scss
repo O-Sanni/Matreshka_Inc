@@ -1,0 +1,59 @@
+@import "ReusableStyles";
+//Navigation 
+
+#navigation{
+display:flex;
+flex-direction: row;
+justify-content: space-around;
+background-image: url("../assets/background_navigation_footer.png");
+height: 85px;
+background-position: center;
+border-bottom:outset 3px rgb(0, 123, 255);
+padding-top: 15px;
+}
+
+.class-link{
+    font-family:$milonga;
+    font-size: 30px;
+    color: $footer_nav_txt_color;
+}
+.class-link:hover{
+    text-decoration: none;
+    color: rgb(143, 48, 184);
+}
+
+// Footer
+#main-div-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-image: url("../assets/background_navigation_footer.png");
+    background-position: top;
+}
+
+#matreshka{
+    width: 300px;
+    height: auto;
+}
+
+.footer-div{
+@include footer-div();
+}
+#h1-footer{
+    margin-top: 15px;
+font-family:$milonga;
+color:$footer_nav_txt_color;
+font-size: 35px;
+}
+
+.p-footer{
+    margin-bottom: 0;
+    color: $footer_nav_txt_color;
+    font-family: $pt_serif;
+    font-size: 20px;
+}
+
+#subscribe-button{
+    margin-top: 10px;
+    background-color: rgba(83, 88, 237, 0.995);
+}

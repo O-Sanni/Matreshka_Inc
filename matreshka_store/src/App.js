@@ -1,4 +1,5 @@
 import React from "react";
+import "../src/App.css"
 import {Route, Switch,  BrowserRouter as Router} from "react-router-dom";
 import Subscribe from "./componets/Subscribe";
 import BookPage from "./componets/BookPage";
@@ -9,14 +10,17 @@ import AddOrEditBooks from "./componets/AddOrEditBooks";
 import RussianGifts from "./componets/RussianGifts";
 import RussianBooks from "./componets/RussianBooks";
 import UpdateRequests from "./componets/UpdateRequests"; 
+import HomePage from "./componets/HomePage"
+
 
 
 
 function App(){
     return (
+        <div>
         <Router>
             <Switch>
-                <Route exact path="/" component={BookPage}></Route> 
+                <Route exact path="/" component={HomePage}></Route> 
                 <Route exact path="/bestsellers" component={BookPage}></Route>
                 <Route exact path="/subscribe" component={Subscribe} ></Route>
                 <Route exact path="/requests" component={Requests} ></Route>
@@ -28,6 +32,7 @@ function App(){
                 <Route exact path="/admin" component={AdminsPage} ></Route>
             </Switch>
         </Router>
+        </div>
     )
 }
 

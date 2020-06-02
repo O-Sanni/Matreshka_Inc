@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
-import { Container} from 'reactstrap';
 import Navigation from "./Navigation";
 import Translation from "./TranslationComponent";
+import Footer from "./Footer";
 
 class RussianBooks extends React.Component{
     constructor(props){
@@ -48,11 +48,14 @@ class RussianBooks extends React.Component{
         
         render(){
             return(
-               <Container>
+               <div>
                <Navigation />
                <Translation />
-                    {this.checkIfExist()}   
-               </Container>
+                    {this.checkIfExist()} 
+                    <div className="footer-div">
+                      <Footer />
+                    </div>  
+               </div>
             )
         }
     }

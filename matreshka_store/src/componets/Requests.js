@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import axios from "axios";
 import { Button, Container, Form, FormGroup, Input, ButtonGroup }  from 'reactstrap';
 import Navigation from "./Navigation";
+import Footer from "./Footer";
 
 
 class Requests extends React.Component{
@@ -81,8 +82,9 @@ submitButtonHandler(event){
 
 render(){
     return(
-        <Container id="main-div-request-page">
+        <div id="main-div-request-page">
         <Navigation />
+        <Container>
          <p>Did not find something, please let us know, and we will do our best to find this item</p>
          <Form onSubmit={this.submitButtonHandler}>
                         <FormGroup className="form-request-mini-divs">
@@ -114,7 +116,11 @@ render(){
                     <Button id="cancel-button-request" class="btn btn-secondary" tag={Link} to="/">Cancel</Button>
                         </ButtonGroup>
                 </Form>
-            </Container>  
+                </Container>
+                <div className="footer-div">
+                      <Footer />
+                    </div>
+            </div>  
         )
     } 
  }

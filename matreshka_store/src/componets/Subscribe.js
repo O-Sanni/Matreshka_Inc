@@ -56,9 +56,10 @@ submitButtonHandler(event){
     }
 render(){
     return(
-        <Container id="main-div-subscribe-page">
+        <div id="main-div-subscribe-page">
         <Navigation />
-            <Container id="subscribe-page-form-div">
+            <div id="subscribe-page-form-div">
+            <Container>
             <p id="p-subscribe">Please subscribe to receive our daily updates</p>
                 <Form onSubmit={this.submitButtonHandler}>
                         <FormGroup className="form-subscribe-mini-divs">
@@ -79,8 +80,12 @@ render(){
                     <Button id="cancel-button-subscribe"class="btn btn-secondary" tag={Link} to="/food_search_info">Cancel</Button>
                         </ButtonGroup>
                 </Form>
-            </Container>  
-            </Container>
+                </Container>
+            </div>
+            <div className="footer-div">
+                      <Footer />
+                    </div>  
+            </div>
         )
     }
 }

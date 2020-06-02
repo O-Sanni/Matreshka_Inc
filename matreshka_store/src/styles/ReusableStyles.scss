@@ -1,0 +1,27 @@
+//mixins 
+
+@mixin gridSearchOutput {
+   display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+@mixin footer_div{
+    border-top:inset 3px $border_color;
+position: fixed;
+bottom:0;
+min-width:100%;
+max-width:100%;
+}
+
+//Colors
+$footer_nav_txt_color: rgb(11, 3, 91);
+$border_color:rgb(0, 123, 255);
+$text_color:rgb(49, 8, 114);
+
+//Font 
+$charm: 'Charm', cursive;
+$milonga: 'Milonga', cursive;
+$pt_serif: 'PT Serif', serif;
+$sail: 'Sail', cursive;
+$tangerine: 'Tangerine', cursive;
