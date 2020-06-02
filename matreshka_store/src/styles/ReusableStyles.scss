@@ -8,22 +8,24 @@
 
 @mixin footer_div{
     border-top:inset 3px $border_color;
-position: fixed;
-bottom:0;
-min-width:100%;
-max-width:100%;
+    position: fixed;
+    bottom:0;
+    min-width:100%;
+    max-width:100%;
 }
 
 @mixin buttonsStyle{
     margin-top: 10px;
     background-color: rgba(83, 88, 237, 0.995);
 }
+
 @mixin displayPSubscribeRequest{
     color:$text_color;
     font-family:$pt_serif;
     font-size: 25px;
     margin-bottom: -5px;
 }
+
 @mixin displayH1RequestSubscribe{
     color:$text_color;
     font-family:$tangerine;
@@ -49,8 +51,6 @@ max-width:100%;
     font-family:$viaoda;
     font-size: 27px;
 }
-
-
 
 //Colors
 $footer_nav_txt_color: rgb(11, 3, 91);

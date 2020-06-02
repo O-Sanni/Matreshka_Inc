@@ -1,31 +1,34 @@
 @import "ReusableStyles";
 
-
+//Russian Books
 #main-div-russian-book{
     padding-bottom: 250px;
 }
 #russian-books-list{
-@include gridSearchOutput();
-text-align: center;
+    @include gridSearchOutput();
+    text-align: center;
 }
+
 #second-div-russian-books{
-display: flex;
-flex-direction: column;
-align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 #russian-books-h1{
     margin-top: 15px;
     color:$text_color;
     font-family:$tangerine;
     font-size: 65px;
 }
+
 .russian-books-div-list{
     border: outset 2px $border_color;
     margin: 5px;
 }
 
 .p-russian-books{
-@include paragraphsGiftsAndBooks();
+    @include paragraphsGiftsAndBooks();
 }
 
 .title-russian-books{
@@ -37,25 +40,26 @@ align-items: center;
 }
 
 .img-russian-books{
-width: 250px;
-height: auto;
+    width: 250px;
+    height: auto;
 }
 
 .a-buy-option{
     @include paragraphsGiftsAndBooks();
 }
+
 .a-buy-option:hover{
     text-decoration: none;
     color: rgb(201, 83, 225);
 }
+
 .p-translation{
-   margin-left: 15px;
+    margin-left: 15px;
     margin-top: 15px;
     color:rgb(39, 7, 91);
     font-family:$oranienbaum;
     font-size: 35px;
 }
-
 
 //Translation
 #translation-result{
@@ -63,6 +67,7 @@ height: auto;
     font-family:$cormorent;
     font-size: 35px; 
 }
+
 #select-lable{
     color:rgb(39, 7, 91);
     font-family:$oranienbaum;
@@ -74,39 +79,42 @@ height: auto;
     margin-left: 15px;
     @include buttonsStyle();
 }
+
 #clear-button-transl{
     margin-left: 15px;
     @include buttonsStyle();
 }
 
 //Russian Gifts
-
-
 #main-div-russian-gifts{
     padding-bottom: 250px;
 }
+
 #russian-gifts-list{
-@include gridSearchOutput();
-text-align: center;
+    @include gridSearchOutput();
+    text-align: center;
 }
+
 #second-div-russian-gifts{
-display: flex;
-flex-direction: column;
-align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 #russian-gifts-h1{
     margin-top: 15px;
     color:$text_color;
     font-family:$tangerine;
     font-size: 65px;
 }
+
 .russian-gifts-div-list{
     border: outset 2px $border_color;
     margin: 5px;
 }
 
 .p-russian-gifts{
-@include paragraphsGiftsAndBooks();
+    @include paragraphsGiftsAndBooks();
 }
 
 .title-russian-gifts{
@@ -118,19 +126,21 @@ align-items: center;
 }
 
 .img-russian-gifts{
-width: 250px;
-height: auto;
+    width: 250px;
+    height: auto;
 }
 
 .a-buy-option{
     @include paragraphsGiftsAndBooks();
 }
+
 .a-buy-option:hover{
     text-decoration: none;
     color: rgb(201, 83, 225);
 }
+
 .p-translation{
-   margin-left: 15px;
+    margin-left: 15px;
     margin-top: 15px;
     color:rgb(39, 7, 91);
     font-family:$oranienbaum;

@@ -1,6 +1,5 @@
 @import "ReusableStyles";
 
-
 .footer-div{
     @include footer_div();
 }
@@ -14,8 +13,8 @@
 }
 #books-list{
     margin-top: 25px;
-@include gridSearchOutput();
-text-align: center;
+    @include gridSearchOutput();
+    text-align: center;
 }
 
 .books-div-list{
@@ -24,7 +23,7 @@ text-align: center;
 }
 
 .p-books{
-@include paragraphsGiftsAndBooks();
+    @include paragraphsGiftsAndBooks();
 }
 
 .title-books{
@@ -36,13 +35,14 @@ text-align: center;
 }
 
 .img-books{
-width: 250px;
-height: auto;
+    width: 250px;
+    height: auto;
 }
 
 .a-buy-option{
     @include paragraphsGiftsAndBooks();
 }
+
 .a-buy-option:hover{
     text-decoration: none;
     color: rgb(201, 83, 225);
