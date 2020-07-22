@@ -60,7 +60,7 @@ class RussianBooks extends React.Component{
                     </div>
                     <div className="russian-pages-translations-div">
                         <p className="p-translation">Translation</p>
-                        <Translation />
+                        <Translation  />
                     </div>
                 </div> 
                 <div className="footer-div">
