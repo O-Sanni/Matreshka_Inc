@@ -1,5 +1,10 @@
+@import "./styles/ReusableStyles.scss";
+
 body{
   background-image: url("./assets/background_palin.jpg");
 }
 
+.footer-div{
+  @include footer_div();
+}
 

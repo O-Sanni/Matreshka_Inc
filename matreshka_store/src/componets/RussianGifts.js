@@ -21,8 +21,8 @@ class RussianGifts extends React.Component{
 //get gifts information
     async getGifts(){
         try{
-            let giftsData= await axios.get(`/book_store/v1/gifts`)
-            // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts
+            let giftsData= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts`)
+            // book_store/v1/gifts
             this.setState({russianGiftList:giftsData.data})
         }
         catch(error){

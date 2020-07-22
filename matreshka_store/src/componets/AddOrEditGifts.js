@@ -36,8 +36,8 @@ class AddOrEditGifts extends Component {
 //search gift information by specific id
   async getGiftInfo(){
     try {
-      const gift= await axios.get(`/book_store/v1/gifts/${this.state.id}`)
-      //  https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/${this.state.id}
+      const gift= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts/${this.state.id}`)
+      //  book_store/v1/gifts/${this.state.id}
       this.setState({item:gift.data});}
     catch(error){console.log(error)};
       this.setState({put:true})

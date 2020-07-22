@@ -44,8 +44,8 @@ constructor(props){
 //add subscription to the database
     submitButtonHandler(event){
         event.preventDefault();
-        axios.post('/book_store/v1/subscribe',{
-        // https://cors-anywhere.herokuapp.com/https://matreshka-store.herokuapp.com/book_store/v1/subscribe
+        axios.post('https://cors-anywhere.herokuapp.com/https://matreshka-store.herokuapp.com/book_store/v1/subscribe',{
+        // book_store/v1/subscribe
             email: this.state.email,
             fullName: this.state.fullName,
             age: this.state.age

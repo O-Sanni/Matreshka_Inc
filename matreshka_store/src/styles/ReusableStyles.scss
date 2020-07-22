@@ -7,11 +7,11 @@
 }
 
 @mixin footer_div{
-    border-top:inset 3px $border_color;
-    position: fixed;
-    bottom:0;
+    // border-top:inset 3px $border_color;
     min-width:100%;
     max-width:100%;
+    position:fixed;
+    bottom: 0;
 }
 
 @mixin buttonsStyle{

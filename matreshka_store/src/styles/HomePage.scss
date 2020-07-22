@@ -28,3 +28,7 @@
     font-size: 25px;
     color: $text_color;  
 }
+
+.footer-div{
+    @include footer_div();
+}

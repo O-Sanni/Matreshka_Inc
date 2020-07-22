@@ -1,5 +1,9 @@
 @import "ReusableStyles";
 
+.footer-div{
+    @include footer_div();
+}
+
 //Russian Books
 #main-div-russian-book{
     padding-bottom: 250px;

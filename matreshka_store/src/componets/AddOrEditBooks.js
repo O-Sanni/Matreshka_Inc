@@ -39,8 +39,8 @@ class AddOrEditBooks extends Component {
   //search book information by specific id
   async getBookInfo(){
   try {
-    const book= await axios.get(`/book_store/v1/books/${this.state.id}`)
-    //  https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/${this.state.id}
+    const book= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/${this.state.id}`)
+    // book_store/v1/books/${this.state.id}
     this.setState({item:book.data});}
   catch(error){console.log(error)};
     this.setState({put:true})
@@ -60,8 +60,8 @@ class AddOrEditBooks extends Component {
   async handleSubmit(event) {
     event.preventDefault();
     if(this.state.put===true){
-      axios.put(`/book_store/v1/books/${this.state.id}`, this.state.item)
-      // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/${this.state.id}
+      axios.put(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/${this.state.id}`, this.state.item)
+      // book_store/v1/books/${this.state.id}
     .then(function (response) {
       console.log(response);
     })
@@ -70,8 +70,8 @@ class AddOrEditBooks extends Component {
     });
   }
     else{
-      axios.post('/book_store/v1/books/', this.state.item)
-      // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/
+      axios.post('https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books/', this.state.item)
+      // book_store/v1/books/
       .then(function (response) {
         console.log(response);
       })

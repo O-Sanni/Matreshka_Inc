@@ -36,8 +36,8 @@ class UpdateRequests extends Component {
 //will get information about specific request by id
   async getRequestInfo(){
     try {
-      const request= await axios.get(`/book_store/v1/requests/${this.state.id}`)
-      //  https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/requests/${this.state.id}
+      const request= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/requests/${this.state.id}`)
+      //  book_store/v1/requests/${this.state.id}
       this.setState({item:request.data});}
     catch(error){console.log(error)};
   }
@@ -55,8 +55,8 @@ class UpdateRequests extends Component {
   //will update request information
   async handleSubmit(event) {
     event.preventDefault();
-    axios.put(`/book_store/v1/requests/${this.state.id}`, this.state.item)
-    // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/requests/${this.state.id}
+    axios.put(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/requests/${this.state.id}`, this.state.item)
+    // book_store/v1/requests/${this.state.id}
     .then(function (response) {
       console.log(response);
     })

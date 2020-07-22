@@ -2,6 +2,7 @@ import React from "react";
 import Navigation from "./Navigation"
 import Footer from "./Footer";
 import {Container}  from 'reactstrap';
+import "../styles/NaviagtionAndFooter.scss"
 import "../styles/HomePage.scss"
 
 
@@ -18,8 +19,9 @@ function HomePage(){
                     commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
             </Container>
                 <div className="footer-div">
-                <Footer />  
+                    <Footer />  
             </div> 
+        
         </div>
     )
 }

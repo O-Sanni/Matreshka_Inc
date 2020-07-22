@@ -26,8 +26,8 @@ class AdminsPage extends React.Component{
 //will get gifts info
   async getGiftsInfo(){
     try{
-        let giftsData= await axios.get(`/book_store/v1/gifts`)
-        // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts
+        let giftsData= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/gifts`)
+        // book_store/v1/gifts
         this.setState({russianGifts:giftsData.data})
     }
     catch(error){
@@ -38,8 +38,8 @@ class AdminsPage extends React.Component{
 //will get books info
   async getBooksInfo(){
     try{
-      let booksData= await axios.get(`/book_store/v1/books`)
-      // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books
+      let booksData= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books`)
+      // book_store/v1/books
       this.setState({russianBooks:booksData.data})
     }
     catch(error){
@@ -50,8 +50,8 @@ class AdminsPage extends React.Component{
 //will get subscribtions info
   async getSubscribe(){
     try{
-      let subscribeData= await axios.get(`/book_store/v1/subscribe`)
-      // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/subscribe
+      let subscribeData= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/subscribe`)
+      // book_store/v1/subscribe
       this.setState({subscribe:subscribeData.data})
     }
     catch(error){
@@ -62,8 +62,8 @@ class AdminsPage extends React.Component{
 //will get gifts info
   async getRequests(){
     try{
-      let requestsData= await axios.get(`/book_store/v1/requests`)
-      // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/requests
+      let requestsData= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/requests`)
+      // book_store/v1/requests
       this.setState({requests:requestsData.data})
     }
     catch(error){

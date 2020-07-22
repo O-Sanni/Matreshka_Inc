@@ -20,8 +20,8 @@ class RussianBooks extends React.Component{
 //get list of books
     async getBooks(){
         try{
-            let books= await axios.get(`/book_store/v1/books`)
-            // https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books
+            let books= await axios.get(`https://cors-anywhere.herokuapp.com/https://matreshka-database.herokuapp.com/book_store/v1/books`)
+            // book_store/v1/books
             this.setState({russianBookList:books.data})
         }
         catch(error){

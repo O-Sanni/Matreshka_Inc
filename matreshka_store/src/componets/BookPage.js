@@ -47,8 +47,9 @@ class BookPage extends React.Component{
             </div>
               {this.state.submitButton ? (<BookSearch typeSearch={this.state.typeSearch} />) : ""}
             <div className="footer-div">
-              <Footer />
+            <Footer />
             </div>
+            
           </div>
       )}
 }

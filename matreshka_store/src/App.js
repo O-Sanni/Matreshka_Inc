@@ -11,6 +11,7 @@ import RussianGifts from "./componets/RussianGifts";
 import RussianBooks from "./componets/RussianBooks";
 import UpdateRequests from "./componets/UpdateRequests"; 
 import HomePage from "./componets/HomePage"
+import Footer from "./componets/Footer";
 
 
 function App(){
