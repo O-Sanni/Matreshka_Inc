@@ -8,13 +8,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "russian_books")
+//@Table   entity class maps a database table
+@Table(name = "russian_books") //name enables to change the name of the database table which object is maps(connects)
 
 public class Books {
-
+    //@Id is specify a primary key
     @Id
+    //@GeneratedValue id will be automatically generated
     @GeneratedValue
-    @Column(name = "book_id")
+    //@Column optional annotation that enables to customize the mapping between the entity attribute and the database column
+    @Column(name = "book_id") //name attribute to specify the name of the database column which the entity attribute map
     private long bookId;
 
     @Column(name = "book_name")

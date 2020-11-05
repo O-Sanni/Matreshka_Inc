@@ -44,6 +44,7 @@ class BookPage extends React.Component{
                 </Input>
               </Label>
               <Button  id="input-submit-transl" type="button" onClick={this.submitButton}>Submit</Button>
+              <Button id="clear-button-transl" type="button" onClick={()=>{this.setState({submitButton: false, typeSearch: "hardcover-fiction" })}}>Clear</Button>
             </div>
               {this.state.submitButton ? (<BookSearch typeSearch={this.state.typeSearch} />) : ""}
             <div className="footer-div">

@@ -41,7 +41,7 @@ class RussianBooks extends React.Component{
                         <p className="p-russian-books"><span class="span-russian-books">Description: </span>{res.bookDescription}</p>
                         <p className="p-russian-books"><span class="span-russian-books">Category: </span>{res.bookCategory}</p>
                         <p className="p-russian-books"><span class="span-russian-books">Price: </span>${res.bookPrice}</p>
-                        <p className="p-russian-books"><span class="span-russian-books">Buy at: </span><a className="a-buy-option" href={res.bookWebsite}>Direct website</a></p>
+                        <p className="p-russian-books"><span class="span-russian-books">Order: </span>Contact us to place an order</p>
                         <img className="img-russian-books" src={res.bookPicture} alt="book image" />
                     </div>
                 )})
@@ -58,10 +58,10 @@ class RussianBooks extends React.Component{
                     <div id="russian-books-list">
                         {this.checkIfExist()}
                     </div>
-                    <div className="russian-pages-translations-div">
+                    {/* <div className="russian-pages-translations-div">
                         <p className="p-translation">Translation</p>
                         <Translation  />
-                    </div>
+                    </div> */}
                 </div> 
                 <div className="footer-div">
                     <Footer />

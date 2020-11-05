@@ -51,9 +51,9 @@ class AddOrEditBooks extends Component {
     const target = event.target;
     const value = target.value;
     const name = target.name;
-    let item = {...this.state.item};
-    item[name] = value;
-    this.setState({item});
+    let item = {...this.state.item}; //Spread Operator :allows an iterable such as an array expression or string to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected, or an object expression to be expanded in places where zero or more key-value pairs (for object literals) are expected
+    item[name] = value; //for each name in the item list gives specific value for this name
+    this.setState({item}); //set a new state 
   }
 
   //will add new book or update current book

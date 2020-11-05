@@ -40,7 +40,7 @@ class RussianGifts extends React.Component{
                         <h3 className="title-russian-gifts">Name: {res.giftName}</h3> 
                         <p className="p-russian-gifts"><span class="span-russian-gifts">Description: </span>{res.giftDescription}</p>
                         <p className="p-russian-gifts"><span class="span-russian-gifts">Price: </span>${res.giftPrice}</p>
-                        <p className="p-russian-gifts"><span class="span-russian-gifts">Buy at: </span><a className="a-buy-option" href={res.giftWebsite}>Direct website</a></p>
+                        <p className="p-russian-gifts"><span class="span-russian-gifts">Order:</span> Contact us to place an order </p>
                         <img className="p-russian-gifts" src={res.giftPicture} alt="gift image" />
                     </div>
                 )})
@@ -57,10 +57,10 @@ class RussianGifts extends React.Component{
                         <div id="russian-gifts-list">
                             {this.checkIfExist()} 
                         </div>
-                        <div className="russian-pages-translations-div">
+                        {/* <div className="russian-pages-translations-div">
                             <p className="p-translation">Translation</p>
                             <Translation />
-                        </div>
+                        </div> */}
                     </div> 
                     <div className="footer-div">
                         <Footer />       

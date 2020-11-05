@@ -23,8 +23,6 @@ public class BooksController  {
 
 
 //  get all books
-
-
     @GetMapping("/books")
     public List<Books> getAllBooks(Model model) {
 
@@ -33,12 +31,11 @@ public class BooksController  {
     }
 
 //  get book by id
-
     @GetMapping("/books/{id}")
     public ResponseEntity<Books> booksById(@PathVariable(value = "id") Long bookId)
             throws ResourcesNotFoundException {
         Books books = booksRepository.findById(bookId)
-                .orElseThrow(() -> new ResourcesNotFoundException("User's recipe not found for this id :: " + bookId));
+                .orElseThrow(() -> new ResourcesNotFoundException("User's book not found for this id :: " + bookId));
         return ResponseEntity.ok().body(books);
     }
 
@@ -80,7 +77,7 @@ public class BooksController  {
     public Map<String, Boolean> deleteBooks(@PathVariable(value = "id") Long bookId)
             throws ResourcesNotFoundException {
         Books books = booksRepository.findById(bookId)
-                .orElseThrow(()-> new ResourcesNotFoundException("Recipe not found for this id :: " + bookId));
+                .orElseThrow(()-> new ResourcesNotFoundException("Book not found for this id :: " + bookId));
 
         booksRepository.delete(books);
         Map<String, Boolean> response = new HashMap<>();

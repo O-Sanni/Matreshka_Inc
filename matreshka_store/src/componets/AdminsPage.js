@@ -129,6 +129,7 @@ class AdminsPage extends React.Component{
                   <p className="admin-page-p">Title: {book.bookName} ({book.bookEnglishName}) </p> 
                   <p className="admin-page-p">Author: {book.bookAuthor}</p>
                   <p className="admin-page-p">Price: ${book.bookPrice}</p>
+                  <p className="admin-page-p"><a href={book.bookWebsite}>Order page</a></p>
                   <ButtonGroup>
                     <Button className="admin-buttons-class" size="sm" color="primary" tag={Link} to={"/add-update-books/" + book.id}>Edit</Button> 
                     <Button className="admin-buttons-class" size="sm" color="danger" onClick={() => this.removeBooks(book.id)}>Delete</Button>
@@ -147,6 +148,7 @@ class AdminsPage extends React.Component{
                     <p className="admin-page-p" >Gift ID: #{gift.id}</p>
                     <p className="admin-page-p">Name: {gift.giftName}</p> 
                     <p className="admin-page-p">Price: ${gift.giftPrice}</p>
+                    <p className="admin-page-p"><a href={gift.giftWebsite}>Order page</a></p>
                     <ButtonGroup>
                       <Button className="admin-buttons-class" size="sm" color="primary" tag={Link} to={"/add-update-gifts/" + gift.id}>Edit</Button> 
                       <Button className="admin-buttons-class" size="sm" color="danger" onClick={() => this.removeGifts(gift.id)}>Delete</Button>

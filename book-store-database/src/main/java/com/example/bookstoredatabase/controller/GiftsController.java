@@ -39,7 +39,7 @@ public class GiftsController {
     public ResponseEntity<Gifts> giftsById(@PathVariable(value = "id") Long giftsId)
             throws ResourcesNotFoundException {
         Gifts gifts = giftsRepository.findById(giftsId)
-                .orElseThrow(() -> new ResourcesNotFoundException("User's recipe not found for this id :: " + giftsId));
+                .orElseThrow(() -> new ResourcesNotFoundException("User's gift not found for this id :: " + giftsId));
         return ResponseEntity.ok().body(gifts);
     }
 
@@ -79,7 +79,7 @@ public class GiftsController {
     public Map<String, Boolean> deleteGifts(@PathVariable(value = "id") Long giftsId)
             throws ResourcesNotFoundException {
         Gifts gifts = giftsRepository.findById(giftsId)
-                .orElseThrow(() -> new ResourcesNotFoundException("Recipe not found for this id :: " + giftsId));
+                .orElseThrow(() -> new ResourcesNotFoundException("Gift not found for this id :: " + giftsId));
 
         giftsRepository.delete(gifts);
         Map<String, Boolean> response = new HashMap<>();
